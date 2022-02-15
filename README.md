@@ -5,7 +5,7 @@ Database Name : foodwaste_management_database
 
 Team Members:
 1.Ajay Marampalli
-2.
+2.Indra Sai Kiran Valluru
 
 
 Project Description: 
