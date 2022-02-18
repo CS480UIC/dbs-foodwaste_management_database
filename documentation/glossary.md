@@ -54,7 +54,7 @@ M-Many , 0- optional , 1-Mandatory
 | restaurant_provides_offer | M-M |   0-0 |
 | offer_provide_discount_to_restaurant| M-M |  0-0 |
 | employee_works_for_restaurant  | 1-M | 1-0 |
-| restuarant_hires_employee      | M-1 |   |
+| restuarant_hires_employee      | M-1 | 0-1  |
 | restaurants_request_delivery | M-M | 0-0 |
 | delivery_services_to_user | M-M | 0-0 |
 | sales_reports_to_restaurant |     M-M  |   1-0 |
