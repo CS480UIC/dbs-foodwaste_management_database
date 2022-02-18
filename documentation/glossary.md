@@ -61,4 +61,93 @@ M-Many , 0- optional , 1-Mandatory
 | restaurant_maintains_sale | M-M |  0-1 |
 
 
+Entity Name: Restaurant
+
+| Attribute      | Maxima        | Minima    |
+| ------------- |:-------------:| -----:    |
+| restaurant_id| 1-1 | 1 |
+| start_time| M-M |  1 |
+| end_time| M-M   |  1 |
+| restaurant_address | M-1 | 1 |
+| restaurant_contact | M-1 | 0 |
+
+
+Entity Name: Inventory
+
+| Attribute      | Maxima        | Minima    |
+| ------------- |:-------------:| -----:    |
+| item_id| 1-1 | 1 |
+| item_price| M-1 |  1 |
+| item_name | M-1   |  1 |
+| item_in_date| M-1 | 1 |
+
+
+
+Entity Name: User
+
+| Attribute      | Maxima        | Minima    |
+| ------------- |:-------------:| -----:    |
+| user_id| 1-1 | 1 |
+| order_date| M-1 |  1 |
+| email | M-M   |  0 |
+| phone | M-1 | 1 |
+| address | M-1 | 1 |
+
+
+Entity Name: Employee
+
+| Attribute      | Maxima        | Minima    |
+| ------------- |:-------------:| -----:    |
+| employee_id| 1-1 | 1 |
+| employee_name| M-1 |  1 |
+| employee_contact| M-M   |  1 |
+| employee_join_date| M-1 | 1 |
+
+
+Entity Name: Offers
+
+| Attribute      | Maxima        | Minima    |
+| ------------- |:-------------:| -----:    |
+| order_id| 1-1 | 1 |
+| item_name| M-M |  1 |
+| percentage_discount | M-1   |  1 |
+
+
+Entity Name: Sales
+
+| Attribute      | Maxima        | Minima    |
+| ------------- |:-------------:| -----:    |
+| sale_id| 1-1 | 1 |
+| sinventory_request_cost M-M |  1 |
+| daily_sale_amount| M-1  |  1 |
+| current_date | M-1 | 1 |
+| sales_report | M-1 | 1|
+| profit | M-1 | 1|
+
+
+Entity Name: Delivery
+
+| Attribute      | Maxima        | Minima    |
+| ------------- |:-------------:| -----:    |
+| delivery_id| 1-1 | 1 |
+| delivery_date_time| M-1 | 1 |
+| delivery_address| M-1 | 1 |
+| delivery_cost| M-1 | 1 |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
