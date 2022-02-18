@@ -2,14 +2,14 @@ Entity Name: Restaurant
 <br>
 Synonyms: eatery, foodplace 
 <br>
-descripton: A restaurant is a business that prepares and serves food and drinks to customers.
-Meals are generally served and eaten on the premises,but many restaurants also offer take-out and food delivery services.
+descripton: A restaurant is a business that serves food and drinks to customers.
+Customers can have food at the restaurant, or can get takeout or get the food delivered
 
 Entity Name:Inventory
 <br>
 Synonyms:reserve, stockpile
 <br>
-description:Inventory refers to all the items, goods, merchandise, and materials held by a business for selling in the market to earn a profit. 
+description:Inventory includes all the items, goods, merchandise, and materials necessary for a restaurant to prepare food and sell it to customers. 
 
 Entity Name: User
 <br>
