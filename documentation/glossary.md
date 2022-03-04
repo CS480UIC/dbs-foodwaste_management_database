@@ -135,6 +135,50 @@ Entity Name: Delivery
 | delivery_cost| M-1 | 1 |
 
 
+Dependent Entities and Entity Relations
+
+1)
+- user ordersFrom restaurant
+- restaurant provides delivery
+-restaurant gives offers
+-restaurant hires employee
+-restaurant requests sales
+-restaurant requests items.
+
+2)Subtype implementations in the database
+
+Item_descriptions is a subtype of items
+
+
+
+
+3)cascade and restrict actions for dependency relations 
+
+patient on delete patient_medical_history cascade
+restaurant on delete employee cascade;
+restaurant on delete delivery cascade;
+restaurant on delete offers cascade;
+restaurant on delete sales cascade;
+restaurant on delete user default;
+
+
+4) user_id(user) on delete offer_id(restaurant) SET NULL;
+delivery_id(delivery) on delete delivery_id(restaurant) SET NULL;
+employee_id(employee) on delete employee_id(restaurant) SET NULL;
+item_id(items) on delete item_id(restaurant_inventory) SET NULL;
+restaurant_id(restaurant) on delete restaurant_inventory cascade;
+sale_id(sales) on delete sales_id(restaurant) SET NULL;
+offer_id(offers) on delete offer_id(restaurant) SET NULL;
+
+
+patient_id(FK) in payment table ->patient_id(PK) in patient table on delete cascade.
+restaurant_id(FK) in sales table->restaurant_id in restaurant table cascade;
+restaurant_id(FK) in inventory table->restaurant_id in restaurant table cascade;
+restaurant_id(FK) in employee table->restaurant_id in restaurant table cascade;
+restaurant_id(FK) in user table->restaurant_id in restaurant table cascade;
+restaurant_id(FK) in delivery table->restaurant_id in restaurant table cascade;
+restaurant_id(FK) in offers table->restaurant_id in restaurant table cascade;
+
 
 
 
