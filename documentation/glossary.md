@@ -327,6 +327,9 @@ item_id       <br/>
 type:SMALLINT UNSIGNED NOT NULL UNIQUE<br/>
 description: contains restaurant id that is connected to items.<br/><br/>
 
+ Cardinality of your attributes with NULL or NOT NULL are updated above
+
+
 
 
 
