@@ -135,10 +135,10 @@ Entity Name: Delivery
 | delivery_cost| M-1 | 1 |
 
 
-#PD-5
+# PD-5
 
 
-##Dependent Entities and Entity Relations
+## Dependent Entities and Entity Relations
 
 
 -user ordersFrom restaurant
@@ -148,14 +148,14 @@ Entity Name: Delivery
 -restaurant requests sales
 -restaurant requests items.
 
-##Subtype implementations in the database
+## Subtype implementations in the database
 
 Item_descriptions is a subtype of items
 
 
 
 
-##cascade and restrict actions for dependency relations 
+## cascade and restrict actions for dependency relations 
 
 patient on delete patient_medical_history cascade;<br/>
 restaurant on delete employee cascade;<br/>
@@ -165,7 +165,7 @@ restaurant on delete sales cascade;<br/>
 restaurant on delete user default;<br/>
 
 
-##cascade and restrict rules on foreign keys that implement dependency relationships
+## cascade and restrict rules on foreign keys that implement dependency relationships
 user_id(user) on delete offer_id(restaurant) SET NULL;<br/>
 delivery_id(delivery) on delete delivery_id(restaurant) SET NULL;<br/>
 employee_id(employee) on delete employee_id(restaurant) SET NULL;<br/>
@@ -175,7 +175,7 @@ sale_id(sales) on delete sales_id(restaurant) SET NULL;<br/>
 offer_id(offers) on delete offer_id(restaurant) SET NULL;<br/>
 
 
-##Implementing attribute types
+## Implementing attribute types
 
 1)	Items:<br/>
 item_price <br/>
@@ -186,7 +186,155 @@ Type: VARCHAR(20) NOT NULL<br/>
 Description: name of the item sold by the restaurant<br/>
 Item_in_date<br/>
 Type: TIMESTAMP NOT NULL<br/>
-Description: date when the item was received by the restaurant.<br/>
+Description: date when the item was received by the restaurant.<br/><br/>
+2)employee<br/>
+employee_id<br/>
+type: SMALLINT UNSIGNED NOT NULL UNIQUE<br/>
+description: id of the employee. Primary keys connects to restaurant table.<br/>
+employee_contact<br/>
+Type:VARCHAR(10) NOT NULL<br/>
+Description: describes the contact number of the employee<br/>
+employee_join_date<br/>
+Type:DATE NOT NULL<br/>
+ Description: describes join date of the employee<br/>
+Item_descriptions:<br/>
+description_id  SMALLINT NOT NULL<br/>
+item_id SMALLINT NOT NULL<br/><br/>
+3)delivery<br/>
+delivery_id<br/>
+Type:SMALLINT UNSIGNED NOT NULL UNIQUE<br/>
+Description: contains the id of the delivery. It’s the primary key that is connected to the restaurant.<br/>
+delivery_date_time<br/>
+Type:DATETIME NOTNULL<br/>
+Description:contains the date and time of delivery.<br/>
+delivery_cost <br/>
+type:DECIMAL(3,2) NOT NULL<br/>
+Description:cost of the delivery<br/><br/>
+4)restaurant<br/>
+restaurant_id<br/>
+Type: SMALLINT UNSIGNED NOT NULL UNIQUE<br/>
+Description: contains ID of the restaurant. It is the primary key of the table.<br/>
+
+start_time<br/>
+type:DATETIME NOTNULL<br/>
+description: contains start time of the restaurant.<br/>
+
+end_time<br/>
+type:DATETIME NOTNULL<br/>
+description: contains end time of the restaurant<br/>
+
+restaurant_address<br/>
+type: VARCHAR(40) NOTNULL<br/>
+description: contains the address of the restaurant<br/>
+
+restaurant_contact<br/>
+type:VARCHAR(10) NOTNULL<br/>
+description: contains the contact details of the restaurant<br/>
+
+sale_id<br/>
+type: SMALLINT UNSIGNED NOT NULL UNIQUE<br/>
+description: contains the id of a sale. Foreign key that connects the sales to entity.<br/>
+
+employee_id<br/>
+Type: SMALLINT UNSIGNED NOT NULL UNIQUE<br/>
+Description: contains the id of the employee. Foreign key that connects employee to restaurant<br/>
+
+user_id<br/>
+type: SMALLINT UNSIGNED NOT NULL UNIQUE<br/>
+Description: contains id of the user. Foreign key that connects user to restaurant<br/>
+
+delivery_id<br/>
+type:   SMALLINT UNSIGNED NOT NULL UNIQUE        NOT NULL<br/>
+description: contains id of the delivery. Foreign key that connects delivery to restaurant.<br/>
+
+offer_id<br/>
+Type:   SMALLINT UNSIGNED NOT NULL UNIQUE        NOT NULL<br/>
+Description: contains the id of the offer. Foreign key that connects offer to restaurant<br/>
+
+5) User:<br/>
+
+user_id<br/>      
+Type: SMALLINT UNSIGNED NOT NULL UNOIQUE<br/>
+Description: contains id of the user. Primary key that connects to the restaurant table<br/>
+
+order_date    <br/>
+Type: DATETIME NOT NULL<br/>
+Description: contains date of the order.<br/>
+
+phone<br/>           
+Type: VARCHAR(10) NOT NULL<br/>
+Description: contains the contact number of the user.<br/>
+
+address      
+Type:  VARCHAR(40) NOT NULL<br/>
+Description: contains the address of the user.<br/>
+
+email            
+Type: VARCHAR(40) NOT NULL<br/>
+Description: contains the email of the user<br/><br/>
+
+6)offers<br/>
+
+offer_id<br/>      
+Type: SMALLINT UNSIGNED NOT NULL UNIQUE<br/>
+Description: contains id of the offer.  Primary keys that connect to the restaurant table<br/>
+
+offer_item_name <br/>       
+ Type:VARCHAR(40)   NOT NULL<br/>
+ Description: name of the item in offer<br/>
+
+percentage_discount  <br/>            
+Type:DECIMAL(3,2).    NOT NULL<br/>
+Description: amount of discount on them item<br/><br/>
+
+7)sales<br/>
+sale_id <br/>              
+Type:  SMALLINT UNSIGNED NOT NULL UNIQUE<br/>
+Description: contains id of the sale. Primary key of the entity that connects to the restaurant entity.<br/>
+
+daily_sale_amount  <br/>       
+DECIMAL(5,2).  NOT NULL<br/>
+description: contains a days total sales amount<br/>
+
+sales_report   <br/>                 
+type: VARCHAR(20)    NOT NULL<br/>
+description: contains the report of the sales<br/>
+
+current_date   <br/>                 
+type:DATE   NOT NULL<br/>
+description: gives current date<br/>
+
+profit  <br/>                              
+type:DECIMAL(5,2)   NOT NULL<br/>
+description:profit of a restaurant<br/><br/>
+
+8)item_sales<br/> 
+sale_id<br/> 
+Type: SMALL INT NOT NULL<br/> 
+Descirption: contains sale_id that is connected to sales.<br/> 
+
+9) item_id <br/>
+Type:SMALL INT NOT NULL<br/>
+Description: contains id of the item that is connected to the sales.<br/>
+10)restaurant_inventory<br/>
+
+ restaurant_id  <br/>
+ type: SMALLINT UNSIGNED NOT NULL UNIQUE<br/>
+description: contains restaurant id that is connected to the restaurant<br/>
+
+ item_id       <br/>       
+type:SMALLINT UNSIGNED NOT NULL UNIQUE<br/>
+description: contains restaurant id that is connected to items.<br/><br/>
+
+
+
+
+
+
+
+  
+ 
+
 
 
 
