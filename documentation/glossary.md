@@ -135,49 +135,63 @@ Entity Name: Delivery
 | delivery_cost| M-1 | 1 |
 
 
-Dependent Entities and Entity Relations
+#PD-5
 
-1)
-- user ordersFrom restaurant
-- restaurant provides delivery
+
+##Dependent Entities and Entity Relations
+
+
+-user ordersFrom restaurant
+-restaurant provides delivery
 -restaurant gives offers
 -restaurant hires employee
 -restaurant requests sales
 -restaurant requests items.
 
-2)Subtype implementations in the database
+##Subtype implementations in the database
 
 Item_descriptions is a subtype of items
 
 
 
 
-3)cascade and restrict actions for dependency relations 
+##cascade and restrict actions for dependency relations 
 
-patient on delete patient_medical_history cascade
-restaurant on delete employee cascade;
-restaurant on delete delivery cascade;
-restaurant on delete offers cascade;
-restaurant on delete sales cascade;
-restaurant on delete user default;
-
-
-4) user_id(user) on delete offer_id(restaurant) SET NULL;
-delivery_id(delivery) on delete delivery_id(restaurant) SET NULL;
-employee_id(employee) on delete employee_id(restaurant) SET NULL;
-item_id(items) on delete item_id(restaurant_inventory) SET NULL;
-restaurant_id(restaurant) on delete restaurant_inventory cascade;
-sale_id(sales) on delete sales_id(restaurant) SET NULL;
-offer_id(offers) on delete offer_id(restaurant) SET NULL;
+patient on delete patient_medical_history cascade;<br/>
+restaurant on delete employee cascade;<br/>
+restaurant on delete delivery cascade;<br/>
+restaurant on delete offers cascade;<br/>
+restaurant on delete sales cascade;<br/>
+restaurant on delete user default;<br/>
 
 
-patient_id(FK) in payment table ->patient_id(PK) in patient table on delete cascade.
-restaurant_id(FK) in sales table->restaurant_id in restaurant table cascade;
-restaurant_id(FK) in inventory table->restaurant_id in restaurant table cascade;
-restaurant_id(FK) in employee table->restaurant_id in restaurant table cascade;
-restaurant_id(FK) in user table->restaurant_id in restaurant table cascade;
-restaurant_id(FK) in delivery table->restaurant_id in restaurant table cascade;
-restaurant_id(FK) in offers table->restaurant_id in restaurant table cascade;
+##cascade and restrict rules on foreign keys that implement dependency relationships
+user_id(user) on delete offer_id(restaurant) SET NULL;<br/>
+delivery_id(delivery) on delete delivery_id(restaurant) SET NULL;<br/>
+employee_id(employee) on delete employee_id(restaurant) SET NULL;<br/>
+item_id(items) on delete item_id(restaurant_inventory) SET NULL;<br/>
+restaurant_id(restaurant) on delete restaurant_inventory cascade;<br/>
+sale_id(sales) on delete sales_id(restaurant) SET NULL;<br/>
+offer_id(offers) on delete offer_id(restaurant) SET NULL;<br/>
+
+
+##Implementing attribute types
+
+1)	Items:<br/>
+item_price <br/>
+Type: DECIMAL(3,2) NOT NULL<br/>
+Description: describes the prices of the items sold by the restaurant<br/>
+Item_name<br/>
+Type: VARCHAR(20) NOT NULL<br/>
+Description: name of the item sold by the restaurant<br/>
+Item_in_date<br/>
+Type: TIMESTAMP NOT NULL<br/>
+Description: date when the item was received by the restaurant.<br/>
+
+
+
+
+
 
 
 
