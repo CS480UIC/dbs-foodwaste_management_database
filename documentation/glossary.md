@@ -316,13 +316,14 @@ Descirption: contains sale_id that is connected to sales.<br/>
 9) item_id <br/>
 Type:SMALL INT NOT NULL<br/>
 Description: contains id of the item that is connected to the sales.<br/>
+
 10)restaurant_inventory<br/>
 
- restaurant_id  <br/>
- type: SMALLINT UNSIGNED NOT NULL UNIQUE<br/>
+restaurant_id  <br/>
+type: SMALLINT UNSIGNED NOT NULL UNIQUE<br/>
 description: contains restaurant id that is connected to the restaurant<br/>
 
- item_id       <br/>       
+item_id       <br/>       
 type:SMALLINT UNSIGNED NOT NULL UNIQUE<br/>
 description: contains restaurant id that is connected to items.<br/><br/>
 
