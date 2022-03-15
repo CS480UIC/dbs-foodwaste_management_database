@@ -21,7 +21,7 @@ public class UserDao {
 	/**
 	 * user name to connect to the database 
 	 */
-	private String MySQL_user = "foodwaste_management_database";  //TODO change user
+	private String MySQL_user = "foodwaste_database_management";  //TODO change user
 	
 	/**
 	 * password of your username to connect to the database
