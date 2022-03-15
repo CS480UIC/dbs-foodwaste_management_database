@@ -24,7 +24,7 @@
     restaurant_id : <input type="text" name="delivery_id" value="${form.restaurant_id }"/>
     <span style="color: red; font-weight: 900">${errors.restaurant_id }</span>
     <br/>
-    <input type="submit" value="Update Restaurant"/>
+    <input type="submit"  value="Update Restaurant"/>
 </form>
   </body>
 </html>
