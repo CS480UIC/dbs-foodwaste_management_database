@@ -19,7 +19,7 @@
   </head>
   
   <body>
-  <h1>Delete Restaurant Output</h1>
+  <h1>Delete Restaurant  Output</h1>
 <p style="color: red; font-weight: 900">${msg }</p>
 <form action="<c:url value='/RestaurantServletDelete'/>" method="post">
     <input type="hidden" name="method" value="restaurnat_search"/>

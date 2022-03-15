@@ -35,7 +35,7 @@
     restaurant_contact: <input type="text" name="restaurant_contact" value="${form.restaurant_contact}"/>
     <span style="color: red; font-weight: 900">${errors.restaurant_contact}</span>
     <br/>
-    <input type="submit" value="Update Restaurant"/>
+    <input  type="submit" value="Update Restaurant"/>
 </form>
   </body>
 </body>

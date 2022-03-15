@@ -22,7 +22,7 @@
 <form action="<c:url value='/RestaurantServletDelete'/>" method="post">
     <input type="hidden" name="method" value="restaurant_search"/>
     restaurant_id: <input type="text" name="restaurant_id" value="${form.restaurant_id }"/>
-    <span style="color: red; font-weight: 900">${errors.restaurant_id }</span>
+    <span style="color: red; font-weight: 900">${errors.restaurant_id } </span>
     <br/>
     <input type="submit" value="Delete Restaurant"/>
 </form>

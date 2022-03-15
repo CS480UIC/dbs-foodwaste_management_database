@@ -26,7 +26,7 @@
     restaurant_id: <input type="text" name="restaurant_id" value="${form.restaurant_id }"/>
     <span style="color: red; font-weight: 900">${errors.restaurant_id }</span>
     <br/>
-    <input type="submit" value="Read Restaurant"/>
+    <input  type="submit" value="Read Restaurant"/>
 </form>
   </body>
 </html>

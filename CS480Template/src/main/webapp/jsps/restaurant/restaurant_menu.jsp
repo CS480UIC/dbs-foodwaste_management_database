@@ -20,7 +20,7 @@
   </head>
   
   <body>
-    <h1>CRUD operations for Restaurant</h1>
+    <h1>CRUD operations  for Restaurant</h1>
     <br>
 	<a href="<c:url value='/jsps/restaurant/restaurant_create.jsp'/>" target="_parent">Create Restaurant</a> |&nbsp; 
 	<a href="<c:url value='/jsps/restaurant/restaurant_read.jsp'/>" target="_parent">Read Restaurant</a> |&nbsp;
