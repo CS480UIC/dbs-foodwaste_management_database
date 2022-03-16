@@ -16,9 +16,9 @@ Project Description:
 3. Every food delivery application and all restaurant applications can use this database.
 4. Many applications use the location to suggest the nearby restaurants, but they do not mention the left_over_food at the restaurant or reveal info about the open positions at the restaurant.
 <br/>
-## Screenshots
+<h2>Screenshots</h2>
 <img width="954" alt="1" src="https://user-images.githubusercontent.com/90991188/158493637-7c4911a6-7a98-4a0e-ae3b-185b8339a1d5.PNG">
-## CRUD operations for Offers
+<h3>CRUD operations for Offers</h3>
 <img width="764" alt="2" src="https://user-images.githubusercontent.com/90991188/158493691-cfcd2f85-3349-4735-8a7e-f031e40f8ca7.PNG">
 <img width="960" alt="3" src="https://user-images.githubusercontent.com/90991188/158493716-120fc604-9ad3-4777-b473-5d327ae09435.PNG">
 <img width="943" alt="4" src="https://user-images.githubusercontent.com/90991188/158493733-4c4934e1-d7b0-4023-b397-769ef3852de1.PNG">
