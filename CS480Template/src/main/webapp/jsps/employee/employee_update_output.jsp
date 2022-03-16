@@ -41,6 +41,7 @@
     employee_salary: <input type="text" name="employee_salary" value="${form.employee_salary }"/>
     <span style="color: red; font-weight: 900">${errors.employee_salary }</span>
     <br/>
+    <br/>
     <input type="submit" value="Update Employee"/>
 </form>
   </body>

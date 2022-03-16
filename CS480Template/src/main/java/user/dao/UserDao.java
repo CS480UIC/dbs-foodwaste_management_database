@@ -29,7 +29,7 @@ public class UserDao {
 	private String MySQL_password = "CS480_ANI";  //TODO change password
 	
 	/**
-	 * get the Search result with Username 
+	 * get the Search result with Username * 
 	 */
 	public User findByUsername(String username) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 		User user = new User();
