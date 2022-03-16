@@ -29,6 +29,7 @@
     item_price: <input type="text" name="item_price" value="${form.item_price }"/>
     <span style="color: red; font-weight: 900">${errors.item_price }</span>
     <br/>
+    
     item_name: <input type="text" name="item_name" value="${form.item_name }"/>
     <span style="color: red; font-weight: 900">${errors.item_name }</span>
     <br/>
