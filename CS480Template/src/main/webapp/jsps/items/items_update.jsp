@@ -25,6 +25,7 @@
 	item_id: <input type="text" name="item_id" value="${form.item_id }"/>
 	<span style="color: red; font-weight: 900">${errors.item_id }</span>
 	<br/>
+	<br/>
 	<input type="submit" value="Update items"/>
 </form>
   </body>
