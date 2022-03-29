@@ -141,12 +141,12 @@ Entity Name: Delivery
 ## Dependent Entities and Entity Relations
 
 
--user ordersFrom restaurant
--restaurant provides delivery
--restaurant gives offers
--restaurant hires employee
--restaurant requests sales
--restaurant requests items.
+-user ordersFrom restaurant<br/>
+-restaurant provides delivery<br/>
+-restaurant gives offers<br/>
+-restaurant hires employee<br/>
+-restaurant requests sales<br/>
+-restaurant requests items.<br/>
 
 ## Subtype implementations in the database
 
@@ -157,7 +157,7 @@ Item_descriptions is a subtype of items
 
 ## cascade and restrict actions for dependency relations 
 
-patient on delete patient_medical_history cascade;<br/>
+
 restaurant on delete employee cascade;<br/>
 restaurant on delete delivery cascade;<br/>
 restaurant on delete offers cascade;<br/>
