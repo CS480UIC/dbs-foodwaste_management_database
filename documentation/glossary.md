@@ -328,6 +328,9 @@ type:SMALLINT UNSIGNED NOT NULL UNIQUE<br/>
 description: contains restaurant id that is connected to items.<br/><br/>
 
  Cardinality of your attributes with NULL or NOT NULL are updated above
+ 
+ ## Handling Plural Atrributes
+ We are handling many to many relations in items by creating a sub table named item_descriptions and creating a table name restaurant_inventory whose primary key references item_descriptions.
 
 
 
