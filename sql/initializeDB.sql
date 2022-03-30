@@ -167,30 +167,6 @@ INSERT INTO `offers` VALUES (26,'abc',45,11),(27,'def',50,12),(28,'Sale',70,13),
 UNLOCK TABLES;
 
 --
--- Table structure for table `offers_percentage_discount`
---
-
-DROP TABLE IF EXISTS `offers_percentage_discount`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `offers_percentage_discount` (
-  `offers_percentage_discount` int DEFAULT NULL,
-  `offer_condition` text,
-  `expiration_period` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `offers_percentage_discount`
---
-
-LOCK TABLES `offers_percentage_discount` WRITE;
-/*!40000 ALTER TABLE `offers_percentage_discount` DISABLE KEYS */;
-INSERT INTO `offers_percentage_discount` VALUES (16,'Greater than $500','2012-10-23 00:00:00'),(17,'Minimum $100','2014-08-14 00:00:00'),(18,'Buy 2 get 1 extra','2014-06-12 00:00:00'),(19,'No interest','2014-05-10 00:00:00'),(20,'extra coupons','2014-11-22 00:00:00');
-/*!40000 ALTER TABLE `offers_percentage_discount` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `restaurant`
 --
 
@@ -326,4 +302,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-03-30  0:20:02
+-- Dump completed on 2022-03-30  0:29:10
