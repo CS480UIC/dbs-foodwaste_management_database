@@ -329,38 +329,19 @@ description: contains restaurant id that is connected to items.<br/><br/>
 
  Cardinality of your attributes with NULL or NOT NULL are updated above
  
- ## Handling Plural Atrributes
- We are handling many to many relations in items by creating a sub table named item_descriptions and creating a table name restaurant_inventory whose primary key references item_descriptions.
+ ### Handling Plural Atrributes
+ ------------------------------
+ We have create a plural attribute (offers_percentage_discount) which has the foreign key (offer_id) refering the offers table , it has a primary key which is a composite 
+ key of plural attribute and foreign key.
 
-
-
-
-
-
-
-
-  
+</br>
  
+ ### Handling Many-Many Relation
+ -------------------------------
+ We are handling the many to many relations between the items and restaurant table by creating a new table restaurant_items whose primary key is the composite of two foreign keys ( restaurant_id , item_id) 
 
+</br>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+### Sub Type Entity
+-------------------
+We have created a subtype (item_descriptions) with a primary key ( description_id) for the items supertype entity 
