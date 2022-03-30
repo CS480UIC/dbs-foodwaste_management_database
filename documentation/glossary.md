@@ -5,7 +5,7 @@ Synonyms: eatery, foodplace
 descripton: A restaurant is a business that serves food and drinks to customers.
 Customers can have food at the restaurant, or can get takeout or get the food delivered
 
-Entity Name:Inventory
+Entity Name:Items
 <br>
 Synonyms:reserve, stockpile
 <br>
@@ -48,7 +48,7 @@ M-Many , 0- optional , 1-Mandatory
 | Relation      | Maxima        | Minima    |
 | ------------- |:-------------:| -----:    |
 | restaurant_maintains_inventory| M-M | 1-0 |
-| inventory_supplies_restaurant | M-M |  0-1 |
+| items_supplies_restaurant | M-M |  0-1 |
 | user_orders_from_restaurant | M-M   |  0-0 |
 | restaurant_serves_user  | M-M | 0-0 |
 | restaurant_provides_offer | M-M |   0-0 |
@@ -72,7 +72,7 @@ Entity Name: Restaurant
 | restaurant_contact | M-1 | 0 |
 
 
-Entity Name: Inventory
+Entity Name: Items
 
 | Attribute      | Maxima        | Minima    |
 | ------------- |:-------------:| -----:    |
@@ -80,6 +80,7 @@ Entity Name: Inventory
 | item_price| M-1 |  1 |
 | item_name | M-1   |  1 |
 | item_in_date| M-1 | 1 |
+| restaurant_id | 1-1 | 1 |
 
 
 
@@ -89,9 +90,10 @@ Entity Name: User
 | ------------- |:-------------:| -----:    |
 | user_id| 1-1 | 1 |
 | order_date| M-1 |  1 |
-| email | M-M   |  0 |
-| phone | M-1 | 1 |
-| address | M-1 | 1 |
+| user_email | M-M   |  0 |
+| user_phone | M-1 | 1 |
+| uesr_address | M-1 | 1 |
+| restaurant_id | 1-1 | 1 |
 
 
 Entity Name: Employee
@@ -99,9 +101,9 @@ Entity Name: Employee
 | Attribute      | Maxima        | Minima    |
 | ------------- |:-------------:| -----:    |
 | employee_id| 1-1 | 1 |
-| employee_name| M-1 |  1 |
 | employee_contact| M-M   |  1 |
 | employee_join_date| M-1 | 1 |
+| restaurant_id | 1-1 | 1 |
 
 
 Entity Name: Offers
@@ -109,8 +111,9 @@ Entity Name: Offers
 | Attribute      | Maxima        | Minima    |
 | ------------- |:-------------:| -----:    |
 | order_id| 1-1 | 1 |
-| item_name| M-M |  1 |
+| offer_item_name| M-M |  1 |
 | percentage_discount | M-1   |  1 |
+| restaurant_id | 1-1 | 1 |
 
 
 Entity Name: Sales
@@ -118,11 +121,11 @@ Entity Name: Sales
 | Attribute      | Maxima        | Minima    |
 | ------------- |:-------------:| -----:    |
 | sale_id| 1-1 | 1 |
-| sinventory_request_cost M-M |  1 |
 | daily_sale_amount| M-1  |  1 |
 | current_date | M-1 | 1 |
 | sales_report | M-1 | 1|
 | profit | M-1 | 1|
+| restaurant_id | 1-1 | 1 |
 
 
 Entity Name: Delivery
@@ -133,6 +136,19 @@ Entity Name: Delivery
 | delivery_date_time| M-1 | 1 |
 | delivery_address| M-1 | 1 |
 | delivery_cost| M-1 | 1 |
+| restaurant_id | 1-1 | 1 |
+
+
+### Sub Type Entity : item_descriptions
+
+| Attribute      | Maxima        | Minima    |
+| ------------- |:-------------:| -----:    |
+| description_id| 1-1 | 1 |
+| item_id| 1-1 | 1 |
+| item_description | M-1 | 1 |
+
+
+
 
 
 # PD-5
