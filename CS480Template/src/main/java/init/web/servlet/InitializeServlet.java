@@ -44,7 +44,7 @@ public class InitializeServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		InitService initService = new InitService();
-		InputStream input = getServletContext().getResourceAsStream("/sql/temp.sql");
+		InputStream input = getServletContext().getResourceAsStream("/sql/completeDB.sql");
 		try {
 			initService.initializeDB(input);
 			response.sendRedirect( request.getContextPath() + "/jsps/user/login.jsp");

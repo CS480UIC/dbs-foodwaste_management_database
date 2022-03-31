@@ -117,7 +117,7 @@ public class InitDao {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection connect = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/dbs_foodwaste_management_database", MySQL_user, MySQL_password);
 			
-			System.out.println("conncted to the DB in the init DAO");
+			System.out.println("connected to the DB in the init DAO , get the sql from file");
 			
 			//Initialize the script runner
             ScriptRunner sr = new ScriptRunner(connect);
@@ -125,7 +125,8 @@ public class InitDao {
             Reader reader = new InputStreamReader(input);
             //Running the script
             sr.runScript(reader);
-
+            
+            System.out.println("finished init DB");
 			connect.close();
 		} catch(SQLException e) {
 			throw new RuntimeException(e);
