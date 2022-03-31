@@ -5,7 +5,7 @@ Synonyms: eatery, foodplace
 descripton: A restaurant is a business that serves food and drinks to customers.
 Customers can have food at the restaurant, or can get takeout or get the food delivered
 
-Entity Name:Inventory
+Entity Name:Items
 <br>
 Synonyms:reserve, stockpile
 <br>
@@ -48,7 +48,7 @@ M-Many , 0- optional , 1-Mandatory
 | Relation      | Maxima        | Minima    |
 | ------------- |:-------------:| -----:    |
 | restaurant_maintains_inventory| M-M | 1-0 |
-| inventory_supplies_restaurant | M-M |  0-1 |
+| items_supplies_restaurant | M-M |  0-1 |
 | user_orders_from_restaurant | M-M   |  0-0 |
 | restaurant_serves_user  | M-M | 0-0 |
 | restaurant_provides_offer | M-M |   0-0 |
@@ -72,7 +72,7 @@ Entity Name: Restaurant
 | restaurant_contact | M-1 | 0 |
 
 
-Entity Name: Inventory
+Entity Name: Items
 
 | Attribute      | Maxima        | Minima    |
 | ------------- |:-------------:| -----:    |
@@ -80,6 +80,7 @@ Entity Name: Inventory
 | item_price| M-1 |  1 |
 | item_name | M-1   |  1 |
 | item_in_date| M-1 | 1 |
+| restaurant_id | 1-1 | 1 |
 
 
 
@@ -89,9 +90,10 @@ Entity Name: User
 | ------------- |:-------------:| -----:    |
 | user_id| 1-1 | 1 |
 | order_date| M-1 |  1 |
-| email | M-M   |  0 |
-| phone | M-1 | 1 |
-| address | M-1 | 1 |
+| user_email | M-M   |  0 |
+| user_phone | M-1 | 1 |
+| uesr_address | M-1 | 1 |
+| restaurant_id | 1-1 | 1 |
 
 
 Entity Name: Employee
@@ -99,9 +101,9 @@ Entity Name: Employee
 | Attribute      | Maxima        | Minima    |
 | ------------- |:-------------:| -----:    |
 | employee_id| 1-1 | 1 |
-| employee_name| M-1 |  1 |
 | employee_contact| M-M   |  1 |
 | employee_join_date| M-1 | 1 |
+| restaurant_id | 1-1 | 1 |
 
 
 Entity Name: Offers
@@ -109,8 +111,9 @@ Entity Name: Offers
 | Attribute      | Maxima        | Minima    |
 | ------------- |:-------------:| -----:    |
 | order_id| 1-1 | 1 |
-| item_name| M-M |  1 |
+| offer_item_name| M-M |  1 |
 | percentage_discount | M-1   |  1 |
+| restaurant_id | 1-1 | 1 |
 
 
 Entity Name: Sales
@@ -118,11 +121,11 @@ Entity Name: Sales
 | Attribute      | Maxima        | Minima    |
 | ------------- |:-------------:| -----:    |
 | sale_id| 1-1 | 1 |
-| sinventory_request_cost M-M |  1 |
 | daily_sale_amount| M-1  |  1 |
 | current_date | M-1 | 1 |
 | sales_report | M-1 | 1|
 | profit | M-1 | 1|
+| restaurant_id | 1-1 | 1 |
 
 
 Entity Name: Delivery
@@ -133,6 +136,19 @@ Entity Name: Delivery
 | delivery_date_time| M-1 | 1 |
 | delivery_address| M-1 | 1 |
 | delivery_cost| M-1 | 1 |
+| restaurant_id | 1-1 | 1 |
+
+
+### Sub Type Entity : item_descriptions
+
+| Attribute      | Maxima        | Minima    |
+| ------------- |:-------------:| -----:    |
+| description_id| 1-1 | 1 |
+| item_id| 1-1 | 1 |
+| item_description | M-1 | 1 |
+
+
+
 
 
 # PD-5
@@ -141,12 +157,12 @@ Entity Name: Delivery
 ## Dependent Entities and Entity Relations
 
 
--user ordersFrom restaurant
--restaurant provides delivery
--restaurant gives offers
--restaurant hires employee
--restaurant requests sales
--restaurant requests items.
+-user ordersFrom restaurant<br/>
+-restaurant provides delivery<br/>
+-restaurant gives offers<br/>
+-restaurant hires employee<br/>
+-restaurant requests sales<br/>
+-restaurant requests items.<br/>
 
 ## Subtype implementations in the database
 
@@ -157,7 +173,7 @@ Item_descriptions is a subtype of items
 
 ## cascade and restrict actions for dependency relations 
 
-patient on delete patient_medical_history cascade;<br/>
+
 restaurant on delete employee cascade;<br/>
 restaurant on delete delivery cascade;<br/>
 restaurant on delete offers cascade;<br/>
@@ -328,36 +344,20 @@ type:SMALLINT UNSIGNED NOT NULL UNIQUE<br/>
 description: contains restaurant id that is connected to items.<br/><br/>
 
  Cardinality of your attributes with NULL or NOT NULL are updated above
-
-
-
-
-
-
-
-
-  
  
+ ### Handling Plural Atrributes
+ ------------------------------
+ We have create a plural attribute (offers_percentage_discount) which has the foreign key (offer_id) refering the offers table , it has a primary key which is a composite 
+ key of plural attribute and foreign key.
 
+</br>
+ 
+ ### Handling Many-Many Relation
+ -------------------------------
+ We are handling the many to many relations between the items and restaurant table by creating a new table restaurant_items whose primary key is the composite of two foreign keys ( restaurant_id , item_id) 
 
+</br>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+### Sub Type Entity
+-------------------
+We have created a subtype (item_descriptions) with a primary key ( description_id) for the items supertype entity 

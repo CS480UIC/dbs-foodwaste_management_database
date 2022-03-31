@@ -1,0 +1,6 @@
+restaurant_id,start_time,end_time,restaurant_address,restaurant_contact,restaurant_name
+1,10:00:00,18:00:00,123 W Street,9999999999,ambrocias
+2,10:00:00,18:00:00,123 S Street,9876543210,adda
+3,10:00:00,18:00:00,123 P street,1234567890,BBQ Nation
+4,10:00:00,19:00:00,456 W street ,9087653232,Nizam
+5,9:00:00,17:00:00,12 polk street,3327894021,madini
