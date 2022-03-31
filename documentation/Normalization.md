@@ -22,3 +22,18 @@
 | delivery_date_time,delivery_address,delivery_cost         | delivery_id   |
 | employee_contact,employee_join_date                       | employee_id   |
 | item_price,item_name,item_in_date                         | item_id       |
+
+
+<h4>3NF - > We have verified that there are no transitive dependencies that is, a non prime attribute depends on another non prime attribute, it also satisfies all conditon of 2NF normal form  </h4>
+
+| Non-prime Attributes                                      | Prime Attributes  |
+|-----------------------------------------------------------|---------------|
+| start_time,end_time,restaurant_address,restaurant_contact | restaurant_id |
+| offer_item_name,percentage_discount,restaurant_id         | offer_id      |
+| order_date,phone,address,email                            | user_id       |
+| delivery_date_time,delivery_address,delivery_cost         | delivery_id   |
+| employee_contact,employee_join_date                       | employee_id   |
+| item_price,item_name,item_in_date                         | item_id       |
+
+
+<h4>BCNF - > We have verified that there are no dependencies in our logical design where a prime attribute is dependent on another non prime attribute and it also satisfies all conditions for 3NF normal form  </h4>
