@@ -4,7 +4,7 @@ package user.domain;
  * User object
  * @author Aayush Makharia
  */
-public class User {
+public class User{
 	/*
 	 * Correspond to the user table
 	 */
