@@ -33,7 +33,6 @@ CREATE TABLE IF NOT EXISTS `dbs_foodwaste_management_database`.`employee` (
   `restaurant_id` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`employee_id`),
   UNIQUE INDEX `employee_id_UNIQUE` (`employee_id` ASC) VISIBLE,
-  UNIQUE INDEX `restaurant_id_UNIQUE` (`restaurant_id` ASC) VISIBLE,
   CONSTRAINT `const_1`
     FOREIGN KEY (`restaurant_id`)
     REFERENCES `dbs_foodwaste_management_database`.`restaurant` (`restaurant_id`)
@@ -60,7 +59,6 @@ CREATE TABLE IF NOT EXISTS `dbs_foodwaste_management_database`.`users` (
   `restaurant_id` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`user_id`),
   UNIQUE INDEX `user_id_UNIQUE` (`user_id` ASC) VISIBLE,
-  UNIQUE INDEX `restaurant_id_UNIQUE` (`restaurant_id` ASC) VISIBLE,
   CONSTRAINT `const_2`
     FOREIGN KEY (`restaurant_id`)
     REFERENCES `dbs_foodwaste_management_database`.`restaurant` (`restaurant_id`)
@@ -81,13 +79,12 @@ DROP TABLE IF EXISTS `dbs_foodwaste_management_database`.`delivery` ;
 
 CREATE TABLE IF NOT EXISTS `dbs_foodwaste_management_database`.`delivery` (
   `delivery_id` INT UNSIGNED NOT NULL,
-  `delivery_date_time` DATETIME NOT NULL,
+  `delivery_date_time` DATE NOT NULL,
   `delivery_address` VARCHAR(40) NOT NULL,
   `delivery_cost` INT NOT NULL,
   `restaurant_id` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`delivery_id`),
   UNIQUE INDEX `delivery_id_UNIQUE` (`delivery_id` ASC) VISIBLE,
-  UNIQUE INDEX `restaurant_id_UNIQUE` (`restaurant_id` ASC) VISIBLE,
   CONSTRAINT `const_3`
     FOREIGN KEY (`restaurant_id`)
     REFERENCES `dbs_foodwaste_management_database`.`restaurant` (`restaurant_id`)
@@ -97,7 +94,7 @@ ENGINE = InnoDB;
 
 LOCK TABLES `delivery` WRITE;
 /*!40000 ALTER TABLE `delivery` DISABLE KEYS */;
-INSERT INTO `delivery` VALUES (21,'1998-02-05 00:00:00','Bishop street',100.00,1),(22,'2021-08-05 00:00:00','Laughlin street',200.00,2),(23,'2021-09-09 00:00:00','Harrison',30.50,3),(24,'2021-02-15 00:00:00','Little Italy',45.50,4),(25,'2022-03-01 00:00:00','New York',65.22,5);
+INSERT INTO `delivery` VALUES (21,'1998-02-05','Tishop street',100.00,1),(22,'2021-08-05','Laughlin street',200.00,2),(23,'2021-09-09','Harrison',30.50,3),(24,'2021-02-15','Little Italy',45.50,4),(25,'2022-03-01','New York',65.22,5);
 /*!40000 ALTER TABLE `delivery` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -111,7 +108,6 @@ CREATE TABLE IF NOT EXISTS `dbs_foodwaste_management_database`.`offers` (
   `restaurant_id` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`offer_id`),
   UNIQUE INDEX `offer_id_UNIQUE` (`offer_id` ASC) VISIBLE,
-  UNIQUE INDEX `restaurant_id_UNIQUE` (`restaurant_id` ASC) VISIBLE,
   CONSTRAINT `const_4`
     FOREIGN KEY (`restaurant_id`)
     REFERENCES `dbs_foodwaste_management_database`.`restaurant` (`restaurant_id`)
@@ -137,7 +133,6 @@ CREATE TABLE IF NOT EXISTS `dbs_foodwaste_management_database`.`sales` (
   `restaurant_id` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`sale_id`),
   UNIQUE INDEX `sale_id_UNIQUE` (`sale_id` ASC) VISIBLE,
-  UNIQUE INDEX `restaurant_id_UNIQUE` (`restaurant_id` ASC) VISIBLE,
   CONSTRAINT `const_5`
     FOREIGN KEY (`restaurant_id`)
     REFERENCES `dbs_foodwaste_management_database`.`restaurant` (`restaurant_id`)
@@ -148,7 +143,7 @@ ENGINE = InnoDB;
 
 LOCK TABLES `sales` WRITE;
 /*!40000 ALTER TABLE `sales` DISABLE KEYS */;
-INSERT INTO `sales` VALUES (16,1000,1500,'got a profit of 1500!','2022-03-03 00:00:00',1),(17,1100,1600,'got a profit of 1600!','2022-03-03 00:00:00',2),(18,1200,1700,'got a profit of 1700!','2022-03-03 00:00:00',3),(20,1400,1800,'got a profit of 1800!','2022-03-03 00:00:00',4),(19,1300,1900,'got a profit of 1900!','2022-03-03 00:00:00',5);
+INSERT INTO `sales` VALUES (16,1000,1500,'got a profit of 1500!','2022-03-03',1),(17,1100,1600,'got a profit of 1600!','2022-03-03',2),(18,1200,1700,'got a profit of 1700!','2022-03-03',3),(20,1400,1800,'got a profit of 1800!','2022-03-03',4),(19,1300,1900,'got a profit of 1900!','2022-03-03',5);
 /*!40000 ALTER TABLE `sales` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -204,7 +199,6 @@ CREATE TABLE IF NOT EXISTS `dbs_foodwaste_management_database`.`restaurant_items
   `item_id` INT UNSIGNED NOT NULL,
   `description_id` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`restaurant_id`, `item_id`),
-  UNIQUE INDEX `restaurant_id_UNIQUE` (`restaurant_id` ASC) VISIBLE,
   UNIQUE INDEX `item_id_UNIQUE` (`item_id` ASC) VISIBLE,
   CONSTRAINT `restaurant_id`
     FOREIGN KEY (`restaurant_id`)
@@ -257,8 +251,13 @@ CREATE TABLE IF NOT EXISTS `dbs_foodwaste_management_database`.`user` (
   PRIMARY KEY (`email`),
   UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE)
 ENGINE = InnoDB;
-
-
+SET foreign_key_checks = 0;
+LOCK TABLES `user` WRITE;
+/*!40000 ALTER TABLE `user_user_email` DISABLE KEYS */;
+INSERT INTO `user` VALUES ('test','test','test@test');
+/*!40000 ALTER TABLE `user_user_email` ENABLE KEYS */;
+UNLOCK TABLES;
+SET foreign_key_checks = 1;
 
 DROP TABLE IF EXISTS `dbs_foodwaste_management_database`.`entity1` ;
 

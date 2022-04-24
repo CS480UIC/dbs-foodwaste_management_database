@@ -33,7 +33,10 @@
     delivery_cost: <input type="text" name="delivery_cost" value="${form.delivery_cost}"/>
     <span style="color: red; font-weight: 900">${errors.delivery_cost }</span>
     <br/>
-	<input type="submit" value="Create Delivery"/>
+    restaurant_id: <input type="text" name="restaurant_id" value="${form.restaurant_id}"/>
+    <span style="color: red; font-weight: 900">${errors.restaurant_id }</span>
+    <br/>
+    <input type="submit" value="Create Delivery"/>
 </form>
   </body>
 </html>

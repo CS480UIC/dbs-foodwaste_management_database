@@ -20,7 +20,7 @@
   <body>
   <h1>Delete Delivery</h1>
 <form action="<c:url value='/DeliveryServletDelete'/>" method="post">
-    <input type="hidden" name="method" value="delivery_search"/>
+    <input type="hidden" name="method" value="search"/>
     delivery_id: <input type="text" name="delivery_id" value="${form.delivery_id }"/>
     <span style="color: red; font-weight: 900">${errors.delivery_id }</span>
     <br/>

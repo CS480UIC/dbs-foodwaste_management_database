@@ -71,6 +71,99 @@
   <url-pattern>/InitializeDB</url-pattern>
 </servlet-mapping>
 
+
+    <servlet>
+    <description></description>
+    <display-name>DeliveryServletCreate</display-name>
+    <servlet-name>DeliveryServletCreate</servlet-name>
+    <servlet-class>delivery.web.servlet.DeliveryServletCreate</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeliveryServletCreate</servlet-name>
+    <url-pattern>/DeliveryServletCreate</url-pattern>
+  </servlet-mapping>
+
+    <servlet>
+    <description></description>
+    <display-name>DeliveryServletRead</display-name>
+    <servlet-name>DeliveryServletRead</servlet-name>
+    <servlet-class>delivery.web.servlet.DeliveryServletRead</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeliveryServletRead</servlet-name>
+    <url-pattern>/DeliveryServletRead</url-pattern>
+  </servlet-mapping>
+  
+      <servlet>
+    <description></description>
+    <display-name>DeliveryServletUpdate</display-name>
+    <servlet-name>DeliveryServletUpdate</servlet-name>
+    <servlet-class>delivery.web.servlet.DeliveryServletUpdate</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeliveryServletUpdate</servlet-name>
+    <url-pattern>/DeliveryServletUpdate</url-pattern>
+  </servlet-mapping>
+  
+      <servlet>
+    <description></description>
+    <display-name>DeliveryServletDelete</display-name>
+    <servlet-name>DeliveryServletDelete</servlet-name>
+    <servlet-class>delivery.web.servlet.DeliveryServletDelete</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeliveryServletDelete</servlet-name>
+    <url-pattern>/DeliveryServletDelete</url-pattern>
+  </servlet-mapping>
+
+  
+  
+      <servlet>
+    <description></description>
+    <display-name>EmployeeServletCreate</display-name>
+    <servlet-name>EmployeeServletCreate</servlet-name>
+    <servlet-class>employee.web.servlet.EmployeeServletCreate</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmployeeServletCreate</servlet-name>
+    <url-pattern>/EmployeeServletCreate</url-pattern>
+  </servlet-mapping>
+
+    <servlet>
+    <description></description>
+    <display-name>EmployeeServletRead</display-name>
+    <servlet-name>EmployeeServletRead</servlet-name>
+    <servlet-class>employee.web.servlet.EmployeeServletRead</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmployeeServletRead</servlet-name>
+    <url-pattern>/EmployeeServletRead</url-pattern>
+  </servlet-mapping>
+  
+      <servlet>
+    <description></description>
+    <display-name>EmployeeServletUpdate</display-name>
+    <servlet-name>EmployeeServletUpdate</servlet-name>
+    <servlet-class>employee.web.servlet.EmployeeServletUpdate</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmployeeServletUpdate</servlet-name>
+    <url-pattern>/EmployeeServletUpdate</url-pattern>
+  </servlet-mapping>
+  
+      <servlet>
+    <description></description>
+    <display-name>EmployeeServletDelete</display-name>
+    <servlet-name>EmployeeServletDelete</servlet-name>
+    <servlet-class>employee.web.servlet.EmployeeServletDelete</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmployeeServletDelete</servlet-name>
+    <url-pattern>/EmployeeServletDelete</url-pattern>
+  </servlet-mapping>
+  
+  
+  
   
   <servlet>
     <description></description>

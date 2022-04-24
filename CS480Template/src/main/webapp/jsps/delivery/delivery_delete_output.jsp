@@ -22,18 +22,15 @@
   <h1>Delete Delivery Output</h1>
 <p style="color: red; font-weight: 900">${msg }</p>
 <form action="<c:url value='/DeliveryServletDelete'/>" method="post">
-    <input type="hidden" name="method" value="delivery_search"/>
-    delivery_id: <input type="text" name="delivery_id" value="${form.delivery_id }"/>
-    <span style="color: red; font-weight: 900">${errors.delivery_id }</span>
+    <input type="hidden" name="method" value="delete"/>
+    <input type="hidden" name="delivery_id" value="${delivery.delivery_id}"/>
+    delivery_id: <input type="text" name="delivery_id" value="${delivery.delivery_id }" disabled/>
     <br/>
-    delivery_date_time : <input type="text" name="delivery_date_time" value="${form.delivery_date_time }"/>
-    <span style="color: red; font-weight: 900">${errors.delivery_date_time }</span>
+    delivery_date_time : <input type="text" name="delivery_date_time" value="${delivery.delivery_date_time }" disabled/>
     <br/>
-    delivery_address: <input type="text" name="delivery_address" value="${form.delivery_address }"/>
-    <span style="color: red; font-weight: 900">${errors.delivery_address }</span>
+    delivery_address: <input type="text" name="delivery_address" value="${delivery.delivery_address }" disabled/>
     <br/>
-    delivery_cost: <input type="text" name="delivery_cost" value="${form.delivery_cost }"/>
-    <span style="color: red; font-weight: 900">${errors.delivery_cost }</span>
+    delivery_cost: <input type="text" name="delivery_cost" value="${delivery.delivery_cost }" disabled/>
     <br/>
     <input type="submit" value="Delete Delivery"/>
 </form>

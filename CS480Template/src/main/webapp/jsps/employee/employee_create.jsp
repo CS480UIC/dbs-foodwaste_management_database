@@ -30,6 +30,9 @@
 	employee_join_date: <input type="text" name="employee_join_date" value="${form.employee_join_date }"/>
 	<span style="color: red; font-weight: 900">${errors.employee_join_date }</span>
 	<br/>
+	restaurant_id: <input type="text" name="restaurant_id" value="${form.restaurant_id}"/>
+    <span style="color: red; font-weight: 900">${errors.restaurant_id }</span>
+    <br/>
 	<input type="submit" value="Create Employee"/>
 </form>
   </body>
