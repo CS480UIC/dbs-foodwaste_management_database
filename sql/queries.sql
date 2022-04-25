@@ -1,8 +1,8 @@
-SELECT * from offers 
-ORDER by percentage_discount;
+SELECT * from employee 
+ORDER by employee_join_date;
 
-SELECT * from offers
-GROUP BY offer_item_name HAVING percentage_discount>50;
+SELECT * from delivery
+GROUP BY delivery_address HAVING delivery_cost>50;
 
 SELECT * from offers
 WHERE offer_item_name LIKE '%a%' and offer_id>27;
