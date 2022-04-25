@@ -27,11 +27,17 @@
     start_time: <input type="text" name="start_time" value="${form.start_time}"/>
     <span style="color: red; font-weight: 900">${errors.start_time }</span>
     <br/>
+    end_time: <input type="text" name="end_time" value="${form.end_time}"/>
+    <span style="color: red; font-weight: 900">${errors.end_time }</span>
+    <br/>
     restaurant_address: <input type="text" name="restaurant_address" value="${form.restaurant_address}"/>
     <span style="color: red; font-weight: 900">${errors.restaurant_address }</span>
     <br/>
      restaurant_contact: <input type="text" name="restaurant_contact" value="${form.restaurant_contact}"/>
     <span style="color: red; font-weight: 900">${errors.restaurant_contact }</span>
+    <br/>
+    restaurant_name: <input type="text" name="restaurant_name" value="${form.restaurant_name}"/>
+    <span style="color: red; font-weight: 900">${errors.restaurant_name }</span>
     <br/>
 	<input type="submit"  value="Create Restaurant"/>
 </form>

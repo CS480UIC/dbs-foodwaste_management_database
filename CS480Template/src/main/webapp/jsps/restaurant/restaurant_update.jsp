@@ -19,9 +19,9 @@
   
   <body>
     <h1>Update Restaurant</h1>
-<form action="<c:url value='/DeliveryServletUpdate'/>" method="post">
-    <input type="hidden" name="method" value="delivery_search"/>
-    restaurant_id : <input type="text" name="delivery_id" value="${form.restaurant_id }"/>
+<form action="<c:url value='/RestaurantServletUpdate'/>" method="post">
+    <input type="hidden" name="method" value="search"/>
+    restaurant_id : <input type="text" name="restaurant_id" value="${form.restaurant_id }"/>
     <span style="color: red; font-weight: 900">${errors.restaurant_id }</span>
     <br/>
     <input type="submit"  value="Update Restaurant"/>

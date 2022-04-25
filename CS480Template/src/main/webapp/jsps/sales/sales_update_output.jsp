@@ -24,19 +24,36 @@
 <p style="color: red; font-weight: 900">${msg }</p>
 
 <form action="<c:url value='/SalesServletUpdate'/>" method="post">
-    <input type="hidden" name="method" value="sales_search"/>
-    sales_id: <input type="text" name="sales_id" value="${form.sales_id }"/>
-    <span style="color: red; font-weight: 900">${errors.sales_id }</span>
+    <input type="hidden" name="method" value="update"/>
+    sale_id: <input type="text" name="sale_id" value="${sales.sale_id }" disabled/>
     <br/>
-    sales_date: <input type="text" name="sales_date" value="${form.sales_date }"/>
-    <span style="color: red; font-weight: 900">${errors.sales_date }</span>
+    daily_sale_amount: <input type="text" name="daily_sale_amount" value="${sales.daily_sale_amount }" disabled/>
     <br/>
-    sales_amount: <input type="text" name="sales_amount" value="${form.sales_amount }"/>
-    <span style="color: red; font-weight: 900">${errors.sales_amount }</span>
+    profit: <input type="text" name="profit" value="${sales.profit }" disabled/>
+    <br/>
+    sales_report: <input type="text" name="sales_report" value="${sales.sales_report }" disabled/>
+    <br/>
+    current_date: <input type="text" name="current_date" value="${sales.current_date }" disabled/>
+    <br/>
+    restaurant_id: <input type="text" name="restaurant_id" value="${sales.restaurant_id }" disabled/>
+    <br/>
+</form>
+<h1>Update the Values Below</h1>
+<form action="<c:url value='/SalesServletUpdate'/>" method="post">
+    <input type="hidden" name="method" value="update"/>
+     <input type="hidden" name="sale_id" value="${sales.sale_id}"/>
+    daily_sale_amount: <input type="text" name="daily_sale_amount" value="${sales.daily_sale_amount}"/>
+    <br/>
+    profit: <input type="text" name="profit" value="${sales.profit}"/>
+    <br/>
+    sales_report: <input type="text" name="sales_report" value="${sales.sales_report}"/>
+    <br/>
+    current_date: <input type="text" name="current_date" value="${sales.current_date}"/>
+    <br/>
+    restaurant_id: <input type="text" name="restaurant_id" value="${sales.restaurant_id}"/>
     <br/>
     <input type="submit" value="Update Sales"/>
-</form>
-
+ </form>
   </body>
 </body>
 </html>

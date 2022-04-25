@@ -20,7 +20,7 @@
   <body>
   <h1>Delete Offer</h1>
 <form action="<c:url value='/OfferServletDelete'/>" method="post">
-	<input type="hidden" name="method" value="offer_search"/>
+	<input type="hidden" name="method" value="search"/>
 	offer_id: <input type="text" name="offer_id" value="${form.offer_id }"/>
 	<span style="color: red; font-weight: 900">${errors.offer_id }</span>
 	<br/>

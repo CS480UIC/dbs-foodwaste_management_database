@@ -21,20 +21,33 @@
   <body>
     <h1>Update Items Output</h1>
 <p style="color: red; font-weight: 900">${msg }</p>
-<form action="<c:url value='/ItemsServletRead'/>" method="post">
-    <input type="hidden" name="method" value="items_search"/>
-    item_id: <input type="text" name="employee_id" value="${form.item_id }"/>
-    <span style="color: red; font-weight: 900">${errors.item_id }</span>
+<form action="<c:url value='/ItemsServletUpdate'/>" method="post">
+    <input type="hidden" name="method" value="update"/>
+    <input type="hidden" name="item_id" value="${items.item_id}" disabled/>
+    item_id: <input type="text" name="item_id" value="${items.item_id }" disabled/>
     <br/>
-    item_price: <input type="text" name="item_price" value="${form.item_price }"/>
-    <span style="color: red; font-weight: 900">${errors.item_price }</span>
+    item_price: <input type="text" name="item_price" value="${items.item_price }" disabled/>
+    <br/>    
+    item_name: <input type="text" name="item_name" value="${items.item_name }" disabled/>
     <br/>
-    
-    item_name: <input type="text" name="item_name" value="${form.item_name }"/>
-    <span style="color: red; font-weight: 900">${errors.item_name }</span>
+    item_in_date: <input type="text" name="item_in_date" value="${items.item_in_date }" disabled/>
     <br/>
-    item_in_date: <input type="text" name="item_in_date" value="${form.item_in_date }"/>
-    <span style="color: red; font-weight: 900">${errors.item_in_date }</span>
+    item_expiry_date: <input type="text" name="item_expiry_date" value="${items.item_expiry_date }" disabled/>
+    <br/>
+</form>
+<h1>Update the Values below</h1>
+<form action="<c:url value='/ItemsServletUpdate'/>" method="post">
+    <input type="hidden" name="method" value="update"/>
+    <input type="hidden" name="item_id" value="${items.item_id}"/>
+    item_id: <input type="text" name="item_id" value="${items.item_id }"/>
+    <br/>
+    item_price: <input type="text" name="item_price" value="${items.item_price }"/>
+    <br/>    
+    item_name: <input type="text" name="item_name" value="${items.item_name }"/>
+    <br/>
+    item_in_date: <input type="text" name="item_in_date" value="${items.item_in_date }"/>
+    <br/>
+    item_expiry_date: <input type="text" name="item_expiry_date" value="${items.item_expiry_date }"/>
     <br/>
     <input type="submit" value="Update Items"/>
 </form>

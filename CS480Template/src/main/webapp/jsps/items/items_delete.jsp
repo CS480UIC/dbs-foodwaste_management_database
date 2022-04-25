@@ -20,12 +20,12 @@
   
   <body>
   <h1>Delete items</h1>
-<form action="<c:url value='/itemsServletDelete'/>" method="post">
-	<input type="hidden" name="method" value="item_search"/>
+<form action="<c:url value='/ItemsServletDelete'/>" method="post">
+	<input type="hidden" name="method" value="search"/>
 	item_id: <input type="text" name="item_id" value="${form.item_id }"/>
 	<span style="color: red; font-weight: 900">${errors.item_id }</span>
 	<br/>
-	<input type="submit" value="Delete items"/>
+	<input type="submit" value="Delete item"/>
 </form>
   </body>
 </html>

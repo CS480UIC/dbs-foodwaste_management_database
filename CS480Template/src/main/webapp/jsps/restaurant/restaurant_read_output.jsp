@@ -23,20 +23,16 @@
 <p style="color: red; font-weight: 900">${msg }</p>
 <form action="<c:url value='/RestaurantServletRead'/>" method="post">
     <input type="hidden" name="method" value="restaurant_search"/>
-    restaurant_id: <input type="text" name="restaurant_id" value="${form.restaurant_id }"/>
-    <span style="color: red; font-weight: 900">${errors.restaurant_id }</span>
+    restaurant_id: <input type="text" name="restaurant_id" value="${restaurant.restaurant_id }" disabled/>
     <br/>
-    start_time : <input type="text" name="start_time" value="${form.start_time }"/>
-    <span style="color: red; font-weight: 900">${errors.start_time }</span>
+    start_time : <input type="text" name="start_time" value="${restaurant.start_time }" disabled/>
     <br/>
-    restaurant_address: <input type="text" name="restaurant_address" value="${form.restaurant_address }"/>
-    <span style="color: red; font-weight: 900">${errors.restaurant_address }</span>
+    restaurant_address: <input type="text" name="restaurant_address" value="${restaurant.restaurant_address }" disabled/>
     <br/>
-    restaurant_contact: <input type="text" name="restaurant_contact" value="${form.drestaurant_contact }"/>
-    <span style="color: red; font-weight: 900">${errors.restaurant_contact }</span>
+    restaurant_contact: <input type="text" name="restaurant_contact" value="${restaurant.restaurant_contact }" disabled/>
     <br/>
-    <input  type="submit" value="Read Restaurant"/>
 </form>
+<button onclick="window.location.href='<c:url value='/jsps/main.jsp'/>'">Continue</button>
   </body>
 </body>
 </html>

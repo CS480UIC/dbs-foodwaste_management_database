@@ -20,8 +20,8 @@
   
   <body>
   <h1>items</h1>
-<form action="<c:url value='/EmployeeServletCreate'/>" method="post">
-	item_id <input type="text" name="item_id" value="${form.item_id }"/>
+<form action="<c:url value='/ItemsServletCreate'/>" method="post">
+	item_id: <input type="text" name="item_id" value="${form.item_id }"/>
 	<span style="color: red; font-weight: 900">${errors.item_id }</span>
 	<br/>
 	item_price: <input type="text" name="item_price" value="${form.item_price }"/>
@@ -33,10 +33,10 @@
 	item_in_date: <input type="text" name="item_in_date" value="${form.item_in_date }"/>
 	<span style="color: red; font-weight: 900">${errors.item_in_date }</span>
 	<br/>
-
-	
-
-	<input type="submit" value="Create Employee"/>
+	item_expiry_date: <input type="text" name="item_expiry_date" value="${form.item_expiry_date }"/>
+	<span style="color: red; font-weight: 900">${errors.item_expiry_date }</span>
+	<br/>
+	<input type="submit" value="Create Item"/>
 </form>
   </body>
 </html>

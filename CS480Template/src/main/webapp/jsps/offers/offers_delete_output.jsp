@@ -21,28 +21,16 @@
   <body>
     <h1>Delete Offers Output</h1>
 <p style="color: red; font-weight: 900">${msg }</p>
-<form action="<c:url value='/OffersServletDelete'/>" method="post">
-    <input type="hidden" name="method" value="offers_search"/>
-    offer_id: <input type="text" name="offer_id" value="${form.offer_id }"/>
-    <span style="color: red; font-weight: 900">${errors.offer_id }</span>
+<form action="<c:url value='/OfferServletDelete'/>" method="post">
+    <input type="hidden" name="method" value="delete"/>
+    <input type="hidden" name="offer_id" value="${offer.offer_id}"/>
+    offer_id: <input type="text" name="offer_id" value="${offer.offer_id }" disabled/>
     <br/>
-    offer_name: <input type="text" name="offer_name" value="${form.offer_name }"/>
-    <span style="color: red; font-weight: 900">${errors.offer_name }</span>
+    offer_item_name: <input type="text" name="offer_item_name" value="${offer.offer_item_name }" disabled/>
     <br/>
-    offer_description: <input type="text" name="offer_description" value="${form.offer_description }"/>
-    <span style="color: red; font-weight: 900">${errors.offer_description }</span>
+    percentage_discount: <input type="text" name="percentage_discount" value="${offer.percentage_discount }" disabled/>
     <br/>
-    offer_price: <input type="text" name="offer_price" value="${form.offer_price }"/>
-    <span style="color: red; font-weight: 900">${errors.offer_price }</span>
-    <br/>
-    offer_discount: <input type="text" name="offer_discount" value="${form.offer_discount }"/>
-    <span style="color: red; font-weight: 900">${errors.offer_discount }</span>
-    <br/>
-    offer_start_date: <input type="text" name="offer_start_date" value="${form.offer_start_date }"/>
-    <span style="color: red; font-weight: 900">${errors.offer_start_date }</span>
-    <br/>
-    offer_end_date: <input type="text" name="offer_end_date" value="${form.offer_end_date }"/>
-    <span style="color: red; font-weight: 900">${errors.offer_end_date }</span>
+    restaurant_id: <input type="text" name="restaurant_id" value="${offer.restaurant_id }" disabled/>
     <br/>
     <input type="submit" value="Delete Offers"/>
 </form>

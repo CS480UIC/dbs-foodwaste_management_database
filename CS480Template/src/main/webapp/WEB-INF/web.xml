@@ -162,7 +162,192 @@
     <url-pattern>/EmployeeServletDelete</url-pattern>
   </servlet-mapping>
   
+
+
+
+
+     <servlet>
+    <description></description>
+    <display-name>ItemsServletCreate</display-name>
+    <servlet-name>ItemsServletCreate</servlet-name>
+    <servlet-class>items.web.servlet.ItemsServletCreate</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ItemsServletCreate</servlet-name>
+    <url-pattern>/ItemsServletCreate</url-pattern>
+  </servlet-mapping>
+
+    <servlet>
+    <description></description>
+    <display-name>ItemsServletRead</display-name>
+    <servlet-name>ItemsServletRead</servlet-name>
+    <servlet-class>items.web.servlet.ItemsServletRead</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ItemsServletRead</servlet-name>
+    <url-pattern>/ItemsServletRead</url-pattern>
+  </servlet-mapping>
   
+      <servlet>
+    <description></description>
+    <display-name>ItemsServletUpdate</display-name>
+    <servlet-name>ItemsServletUpdate</servlet-name>
+    <servlet-class>items.web.servlet.ItemsServletUpdate</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ItemsServletUpdate</servlet-name>
+    <url-pattern>/ItemsServletUpdate</url-pattern>
+  </servlet-mapping>
+  
+      <servlet>
+    <description></description>
+    <display-name>ItemsServletDelete</display-name>
+    <servlet-name>ItemsServletDelete</servlet-name>
+    <servlet-class>items.web.servlet.ItemsServletDelete</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ItemsServletDelete</servlet-name>
+    <url-pattern>/ItemsServletDelete</url-pattern>
+  </servlet-mapping>
+
+  
+  
+     <servlet>
+    <description></description>
+    <display-name>OfferServletCreate</display-name>
+    <servlet-name>OfferServletCreate</servlet-name>
+    <servlet-class>offer.web.servlet.OfferServletCreate</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>OfferServletCreate</servlet-name>
+    <url-pattern>/OfferServletCreate</url-pattern>
+  </servlet-mapping>
+
+    <servlet>
+    <description></description>
+    <display-name>OfferServletRead</display-name>
+    <servlet-name>OfferServletRead</servlet-name>
+    <servlet-class>offer.web.servlet.OfferServletRead</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>OfferServletRead</servlet-name>
+    <url-pattern>/OfferServletRead</url-pattern>
+  </servlet-mapping>
+  
+      <servlet>
+    <description></description>
+    <display-name>OfferServletUpdate</display-name>
+    <servlet-name>OfferServletUpdate</servlet-name>
+    <servlet-class>offer.web.servlet.OfferServletUpdate</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>OfferServletUpdate</servlet-name>
+    <url-pattern>/OfferServletUpdate</url-pattern>
+  </servlet-mapping>
+  
+      <servlet>
+    <description></description>
+    <display-name>OfferServletDelete</display-name>
+    <servlet-name>OfferServletDelete</servlet-name>
+    <servlet-class>offer.web.servlet.OfferServletDelete</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>OfferServletDelete</servlet-name>
+    <url-pattern>/OfferServletDelete</url-pattern>
+  </servlet-mapping>
+  
+  
+
+   <servlet>
+    <description></description>
+    <display-name>RestaurantServletCreate</display-name>
+    <servlet-name>RestaurantServletCreate</servlet-name>
+    <servlet-class>restaurant.web.servlet.RestaurantServletCreate</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RestaurantServletCreate</servlet-name>
+    <url-pattern>/RestaurantServletCreate</url-pattern>
+  </servlet-mapping>
+
+    <servlet>
+    <description></description>
+    <display-name>RestaurantServletRead</display-name>
+    <servlet-name>RestaurantServletRead</servlet-name>
+    <servlet-class>restaurant.web.servlet.RestaurantServletRead</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RestaurantServletRead</servlet-name>
+    <url-pattern>/RestaurantServletRead</url-pattern>
+  </servlet-mapping>
+  
+      <servlet>
+    <description></description>
+    <display-name>RestaurantServletUpdate</display-name>
+    <servlet-name>RestaurantServletUpdate</servlet-name>
+    <servlet-class>restaurant.web.servlet.RestaurantServletUpdate</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RestaurantServletUpdate</servlet-name>
+    <url-pattern>/RestaurantServletUpdate</url-pattern>
+  </servlet-mapping>
+  
+      <servlet>
+    <description></description>
+    <display-name>RestaurantServletDelete</display-name>
+    <servlet-name>RestaurantServletDelete</servlet-name>
+    <servlet-class>restaurant.web.servlet.RestaurantServletDelete</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RestaurantServletDelete</servlet-name>
+    <url-pattern>/RestaurantServletDelete</url-pattern>
+  </servlet-mapping>
+  
+
+ <servlet>
+    <description></description>
+    <display-name>SalesServletCreate</display-name>
+    <servlet-name>SalesServletCreate</servlet-name>
+    <servlet-class>sales.web.servlet.SalesServletCreate</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SalesServletCreate</servlet-name>
+    <url-pattern>/SalesServletCreate</url-pattern>
+  </servlet-mapping>
+
+    <servlet>
+    <description></description>
+    <display-name>SalesServletRead</display-name>
+    <servlet-name>SalesServletRead</servlet-name>
+    <servlet-class>sales.web.servlet.SalesServletRead</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SalesServletRead</servlet-name>
+    <url-pattern>/SalesServletRead</url-pattern>
+  </servlet-mapping>
+  
+      <servlet>
+    <description></description>
+    <display-name>SalesServletUpdate</display-name>
+    <servlet-name>SalesServletUpdate</servlet-name>
+    <servlet-class>sales.web.servlet.SalesServletUpdate</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SalesServletUpdate</servlet-name>
+    <url-pattern>/SalesServletUpdate</url-pattern>
+  </servlet-mapping>
+  
+      <servlet>
+    <description></description>
+    <display-name>SalesServletDelete</display-name>
+    <servlet-name>SalesServletDelete</servlet-name>
+    <servlet-class>sales.web.servlet.SalesServletDelete</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SalesServletDelete</servlet-name>
+    <url-pattern>/SalesServletDelete</url-pattern>
+  </servlet-mapping>
+
+
   
   
   <servlet>

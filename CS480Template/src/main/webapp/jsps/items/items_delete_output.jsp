@@ -21,22 +21,20 @@
   <body>
     <h1>Delete items Output</h1>
 <p style="color: red; font-weight: 900">${msg }</p>
-<form action="<c:url value='/itemsServletDelete'/>" method="post">
-    <input type="hidden" name="method" value="items_search"/>
-    item_id: <input type="text" name="item_id" value="${form.item_id }"/>
-    <span style="color: red; font-weight: 900">${errors.item_id }</span>
+<form action="<c:url value='/ItemsServletDelete'/>" method="post">
+    <input type="hidden" name="method" value="delete"/>
+    <input type="hidden" name="item_id" value="${items.item_id}"/>
+    item_id: <input type="text" name="item_id" value="${items.item_id }" disabled/>
     <br/>
-    item_price: <input type="text" name="item_price" value="${form.item_price }"/>
-    <span style="color: red; font-weight: 900">${errors.item_price }</span>
+    item_price: <input type="text" name="item_price" value="${items.item_price }" disabled/>
     <br/>
-    item_name: <input type="text" name="item_name" value="${form.item_name }"/>
-    <span style="color: red; font-weight: 900">${errors.item_name }</span>
+    item_name: <input type="text" name="item_name" value="${items.item_name }" disabled/>
     <br/>
-    item_in_date: <input type="text" name="item_in_date" value="${form.item_in_date }"/>
-    <span style="color: red; font-weight: 900">${errors.item_in_date }</span>
+    item_in_date: <input type="text" name="item_in_date" value="${items.item_in_date }" disabled/>
     <br/>
-    
-    <input type="submit" value="Delete Employee"/>
+    item_expiry_date: <input type="text" name="item_expiry_date" value="${items.item_expiry_date }" disabled/>
+    <br/>   
+    <input type="submit" value="Delete Items"/>
 </form>
   </body>
 

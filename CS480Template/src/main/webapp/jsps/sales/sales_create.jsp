@@ -27,16 +27,18 @@
 	daily_sale_amount: <input type="text" name="daily_sale_amount" value="${form.daily_sale_amount }"/>
 	<span style="color: red; font-weight: 900">${errors.daily_sale_amount }</span>
 	<br/>
+	profit: <input type="text" name="profit" value="${form.profit }"/>
+    <span style="color: red; font-weight: 900">${errors.profit }</span>
+    <br/>
 	sales_report <input type="text" name="sales_report" value="${form.sales_report}"/>
 	<span style="color: red; font-weight: 900">${errors.sales_report }</span>
 	<br/>
     current_date: <input type="text" name="current_date" value="${form.current_date }"/>
     <span style="color: red; font-weight: 900">${errors.current_date }</span>
     <br/>
-    profit: <input type="text" name="profit" value="${form.profit }"/>
-    <span style="color: red; font-weight: 900">${errors.profit }</span>
-    <br/>
-    
+	restaurant_id: <input type="text" name="restaurant_id" value="${form.restaurant_id }"/>
+	<span style="color: red; font-weight: 900">${errors.restaurant_id }</span>
+	<br/>
 	<input type="submit" value="Create Sales"/>
 </form>
   </body>

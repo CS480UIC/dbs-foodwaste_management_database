@@ -48,6 +48,7 @@
 			<a href="<c:url value='/jsps/delivery/delivery_menu.jsp'/>" target="body">Delivery</a> |&nbsp;&nbsp;
 			<a href="<c:url value='/jsps/restaurant/restaurant_menu.jsp'/>" target="body">Restaurant</a> |&nbsp;&nbsp;
 			<a href="<c:url value='/jsps/employee/employee_menu.jsp'/>" target="body">Employee</a> |&nbsp;&nbsp;
+			<a href="<c:url value='/jsps/items/items_menu.jsp'/>" target="body">Items</a> |&nbsp;&nbsp;
 		</c:otherwise>
 	</c:choose>
 

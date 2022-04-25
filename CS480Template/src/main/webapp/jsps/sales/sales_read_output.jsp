@@ -24,18 +24,26 @@
 <p style="color: red; font-weight: 900">${msg }</p>
 <form action="<c:url value='/SalesServletRead'/>" method="post">
     <input type="hidden" name="method" value="sales_search"/>
-    sales_id: <input type="text" name="sales_id" value="${form.sales_id }"/>
-    <span style="color: red; font-weight: 900">${errors.sales_id }</span>
+    sale_id: <input type="text" name="sale_id" value="${sales.sale_id }" disabled/>
+    <span style="color: red; font-weight: 900">${errors.sale_id }</span>
     <br/>
-    sales_date: <input type="text" name="sales_date" value="${form.sales_date }"/>
-    <span style="color: red; font-weight: 900">${errors.sales_date }</span>
+    daily_sale_amount: <input type="text" name="daily_sale_amount" value="${sales.daily_sale_amount }" disabled/>
+    <span style="color: red; font-weight: 900">${errors.daily_sale_amount }</span>
     <br/>
-    sales_amount: <input type="text" name="sales_amount" value="${form.sales_amount }"/>
-    <span style="color: red; font-weight: 900">${errors.sales_amount }</span>
+    profit: <input type="text" name="profit" value="${sales.profit }" disabled/>
+    <span style="color: red; font-weight: 900">${errors.profit }</span>
     <br/>
-    <input type="submit" value="Read Sales"/>
+    sales_report: <input type="text" name="sales_report" value="${sales.sales_report }" disabled/>
+    <span style="color: red; font-weight: 900">${errors.sales_report }</span>
+    <br/>
+    current_date: <input type="text" name="current_date" value="${sales.current_date }" disabled/>
+    <span style="color: red; font-weight: 900">${errors.current_date }</span>
+    <br/>
+    restaurant_id: <input type="text" name="restaurant_id" value="${sales.restaurant_id }" disabled/>
+    <span style="color: red; font-weight: 900">${errors.restaurant_id }</span>
+    <br/>
 </form>
-
+<button onclick="window.location.href='<c:url value='/jsps/main.jsp'/>'">Continue</button>
   </body>
 </body>
 </html>

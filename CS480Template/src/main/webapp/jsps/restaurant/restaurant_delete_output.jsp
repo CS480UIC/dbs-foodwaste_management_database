@@ -22,20 +22,26 @@
   <h1>Delete Restaurant  Output</h1>
 <p style="color: red; font-weight: 900">${msg }</p>
 <form action="<c:url value='/RestaurantServletDelete'/>" method="post">
-    <input type="hidden" name="method" value="restaurnat_search"/>
-    restaurant_id: <input type="text" name="restaurant_id" value="${form.restaurant_id }"/>
+    <input type="hidden" name="method" value="delete"/>
+    <input type="hidden" name="restaurant_id" value="${restaurant.restaurant_id}"/>
+    restaurant_id: <input type="text" name="restaurant_id" value="${restaurant.restaurant_id }" disabled/>
     <span style="color: red; font-weight: 900">${errors.restaurant_id }</span>
     <br/>
-    start_time : <input type="text" name="start_time" value="${form.start_time }"/>
+    start_time : <input type="text" name="start_time" value="${restaurant.start_time }" disabled/>
     <span style="color: red; font-weight: 900">${errors.start_time }</span>
     <br/>
-    restaurant_address: <input type="text" name="restaurant_address" value="${form.restaurant_address}"/>
+    end_time : <input type="text" name="end_time" value="${restaurant.end_time }" disabled/>
+    <span style="color: red; font-weight: 900">${errors.end_time }</span>
+    <br/>
+    restaurant_address: <input type="text" name="restaurant_address" value="${restaurant.restaurant_address}" disabled/>
     <span style="color: red; font-weight: 900">${errors.restaurant_address }</span>
     <br/>
-    restaurant_contact: <input type="text" name="restaurant_contact" value="${form.restaurant_contact }"/>
+    restaurant_contact: <input type="text" name="restaurant_contact" value="${restaurant.restaurant_contact }" disabled/>
     <span style="color: red; font-weight: 900">${errors.restaurant_contact}</span>
     <br/>
-   
+    restaurant_name: <input type="text" name="restaurant_name" value="${restaurant.restaurant_name }" disabled/>
+    <span style="color: red; font-weight: 900">${errors.restaurant_name }</span>
+    <br/>
     <input type="submit" value="Delete Restaurant"/>
 </form>
 

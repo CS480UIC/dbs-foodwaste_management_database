@@ -21,25 +21,28 @@
   <body>
     <h1>Update Offers Output</h1>
 <p style="color: red; font-weight: 900">${msg }</p>
-<form action="<c:url value='/OffersServletUpdate'/>" method="post">
-    <input type="hidden" name="method" value="offers_search"/>
-    offers_id: <input type="text" name="offers_id" value="${form.offers_id }"/>
-    <span style="color: red; font-weight: 900">${errors.offers_id }</span>
+<form action="<c:url value='/OfferServletUpdate'/>" method="post">
+    <input type="hidden" name="method" value="update"/>
+    offer_id: <input type="text" name="offer_id" value="${offer.offer_id }" disabled/>
     <br/>
-    offers_name: <input type="text" name="offers_name" value="${form.offers_name }"/>
-    <span style="color: red; font-weight: 900">${errors.offers_name }</span>
+    offer_item_name: <input type="text" name="offer_item_name" value="${offer.offer_item_name }" disabled/>
     <br/>
-    offers_description: <input type="text" name="offers_description" value="${form.offers_description }"/>
-    <span style="color: red; font-weight: 900">${errors.offers_description }</span>
+    percentage_discount: <input type="text" name="percentage_discount" value="${offer.percentage_discount }" disabled/>
     <br/>
-    offers_discount: <input type="text" name="offers_discount" value="${form.offers_discount }"/>
-    <span style="color: red; font-weight: 900">${errors.offers_discount }</span>
+    restaurant_id: <input type="text" name="restaurant_id" value="${offer.restaurant_id }" disabled/>
     <br/>
-    offers_start_date: <input type="text" name="offers_start_date" value="${form.offers_start_date }"/>
-    <span style="color: red; font-weight: 900">${errors.offers_start_date }</span>
+</form>
+<h1>Update the Values Below</h1>
+<form action="<c:url value='/OfferServletUpdate'/>" method="post">
+    <input type="hidden" name="method" value="update"/>
+    <input type="hidden" name="offer_id" value="${offer.offer_id}"/>
+    offer_id: <input type="text" name="offer_id" value="${offer.offer_id }"/>
     <br/>
-    offers_end_date: <input type="text" name="offers_end_date" value="${form.offers_end_date }"/>
-    <span style="color: red; font-weight: 900">${errors.offers_end_date }</span>
+    offer_item_name: <input type="text" name="offer_item_name" value="${offer.offer_item_name }"/>
+    <br/>
+    percentage_discount: <input type="text" name="percentage_discount" value="${offer.percentage_discount }"/>
+    <br/>
+    restaurant_id: <input type="text" name="restaurant_id" value="${offer.restaurant_id }"/>
     <br/>
     <input type="submit" value="Update Offers"/>
 </form>

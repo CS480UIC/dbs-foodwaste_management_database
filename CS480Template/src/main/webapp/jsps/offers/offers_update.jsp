@@ -20,7 +20,7 @@
   <body>
   <h1>Update Offer</h1>
 <form action="<c:url value='/OfferServletUpdate'/>" method="post">
-	<input type="hidden" name="method" value="address_search"/>
+	<input type="hidden" name="method" value="search"/>
 	offer_id: <input type="text" name="offer_id" value="${form.offer_id }"/>
 	<span style="color: red; font-weight: 900">${errors.offer_id }</span>
 	<br/>

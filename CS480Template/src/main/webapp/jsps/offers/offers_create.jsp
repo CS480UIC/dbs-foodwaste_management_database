@@ -21,13 +21,12 @@
   <h1>Offers</h1>
 <form action="<c:url value='/OfferServletCreate'/>" method="post">
 	offer_id： <input type="text" name="offer_id" value="${form.offer_id }"/>
-	<span style="color: red; font-weight: 900">${errors.address_zip_code }</span>
 	<br/>
 	offer_item_name: <input type="text" name="offer_item_name" value="${form.offer_item_name }"/>
-	<span style="color: red; font-weight: 900">${errors.address_streetaddress }</span>
 	<br/>
 	percentage_discount： <input type="text" name="percentage_discount" value="${form.percentage_discount }"/>
-	<span style="color: red; font-weight: 900">${errors.address_zip_code }</span>
+	<br/>
+	restaurant_id: <input type="text" name="restaurant_id" value="${form.restaurant_id }"/>
 	<br/>
 	<input type="submit" value="Create Offer"/>
 </form>

@@ -21,7 +21,7 @@
   <body>
   <h1>Delete Sales</h1>
 <form action="<c:url value='/SalesServletDelete'/>" method="post">
-	<input type="hidden" name="method" value="sales_search"/>
+	<input type="hidden" name="method" value="search"/>
 	sale_id: <input type="text" name="sale_id" value="${form.sale_id }"/>
 	<span style="color: red; font-weight: 900">${errors.sale_id }</span>
 	<br/>
