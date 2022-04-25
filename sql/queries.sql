@@ -16,7 +16,7 @@ SELECT DISTINCT(item_name),COUNT(*),LOG(item_price) from items
 WHERE item_price>120;
 
 SELECT sale_id,current_date,profit from sales
-HAVING profit>min(daily_same_amount);
+HAVING profit>min(daily_sale_amount);
 
 SELECT CONCAT('modified ',item_name) as concat_string ,LOWER(item_name) as lower_string from items
 WHERE item_price>200;
