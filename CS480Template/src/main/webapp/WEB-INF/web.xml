@@ -427,6 +427,20 @@
   </servlet-mapping>
   
   
+      <servlet>
+    <description></description>
+    <display-name>OfferQuery</display-name>
+    <servlet-name>OfferQuery</servlet-name>
+    
+    <servlet-class>offer.web.servlet.OfferQuery</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>OfferQuery</servlet-name>
+    <url-pattern>/OfferQuery</url-pattern>
+  </servlet-mapping>
+  
+  
+  
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>login.jsp</welcome-file>

@@ -31,5 +31,7 @@
     <a href="<c:url value='/SalesQuery'/>" target="body">list all the sales with profit greater than minimum of the daily sale amount</a>&nbsp;&nbsp;
     <br>
     <a href="<c:url value='/ItemQuery2'/>" target="body">list all the items with concat and lower string formats</a>&nbsp;&nbsp;
+    <br>
+    <a href="<c:url value='/OfferQuery'/>" target="body">list all the offers with offer_id > 27</a>&nbsp;&nbsp;
   </body>
 </html>

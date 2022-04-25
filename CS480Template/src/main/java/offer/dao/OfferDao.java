@@ -5,15 +5,15 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
-
-
-
+import java.util.ArrayList;
+import java.util.List;
 
 //import java.util.ArrayList;
 //import java.util.List;
 
 import offer.domain.Offer;
+import offer.domain.OfferDomain;
+import user.domain.User;
 
 /**
  * DDL functions performed in database
@@ -127,4 +127,35 @@ public class OfferDao {
 			throw new RuntimeException(e);
 		}
 	}
+	
+	public List<Object> findOffers() throws InstantiationException, IllegalAccessException, ClassNotFoundException{
+		List<Object> list = new ArrayList<>();
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection connect = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/dbs_foodwaste_management_database", MySQL_user, MySQL_password);
+			String sql = "\r\n"
+					+ "SELECT * from offers\r\n"
+					+ "WHERE offer_item_name LIKE '%a%' and offer_id>27;";
+			PreparedStatement preparestatement = connect.prepareStatement(sql); 
+			ResultSet resultSet = preparestatement.executeQuery();			
+			while(resultSet.next()){
+				OfferDomain offer = new OfferDomain();
+				
+				
+				offer.setOffer_id(Integer.parseInt(resultSet.getString("offer_id")));
+				offer.setOffer_item_name(resultSet.getString("offer_item_name"));
+				offer.setPercentage_discount(Integer.parseInt(resultSet.getString("percentage_discount")));
+				offer.setRestaurant_id(Integer.parseInt(resultSet.getString("restaurant_id")));
+				
+				
+	    		list.add(offer);
+			 }
+			connect.close();
+		} catch(SQLException e) {
+			throw new RuntimeException(e);
+		}
+		return list;
+		
+	}
+		
 }
