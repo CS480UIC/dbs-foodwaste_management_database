@@ -23,7 +23,7 @@ WHERE item_price>200;
 
 SELECT timediff(end_time,start_time) as time_difference from restaurant;
 
-SELECT datediff(item_out_date,item_in_date) as date_difference from items;
+SELECT datediff(item_expiry_date,item_in_date) as date_difference from items;
  
 SELECT item_id, count(*) from items
 GROUP BY item_name HAVING COUNT(*)>=1;
