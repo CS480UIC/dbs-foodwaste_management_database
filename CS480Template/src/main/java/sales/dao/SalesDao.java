@@ -5,14 +5,15 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
-
-
+import java.util.ArrayList;
+import java.util.List;
 
 //import java.util.ArrayList;
 //import java.util.List;
 
 import sales.domain.Sales;
+import sales.domain.SalesDomain;
+import user.domain.User;
 
 /**
  * DDL functions performed in database
@@ -135,5 +136,30 @@ public class SalesDao {
 		} catch(SQLException e) {
 			throw new RuntimeException(e);
 		}
+	}
+	
+	public List<Object> findSalesQuery() throws InstantiationException, IllegalAccessException, ClassNotFoundException{
+		List<Object> list = new ArrayList<>();
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection connect = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/dbs_foodwaste_management_database", MySQL_user, MySQL_password);
+			String sql = "SELECT sale_id,current_date,profit from sales\r\n"
+					+ "HAVING profit>min(daily_sale_amount);";
+			PreparedStatement preparestatement = connect.prepareStatement(sql); 
+			ResultSet resultSet = preparestatement.executeQuery();			
+			while(resultSet.next()){
+				SalesDomain sales_query = new SalesDomain();
+				
+				sales_query.setSale_id(Integer.parseInt(resultSet.getString("sale_id")));
+				sales_query.setCurrent_date(java.sql.Date.valueOf(resultSet.getString("current_date")));
+				sales_query.setProfit(Integer.parseInt(resultSet.getString("profit")));
+	    		list.add(sales_query);
+			 }
+			connect.close();
+		} catch(SQLException e) {
+			throw new RuntimeException(e);
+		}
+		return list;
+		
 	}
 }

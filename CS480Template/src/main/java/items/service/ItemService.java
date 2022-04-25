@@ -1,6 +1,8 @@
 package items.service;
 
 
+import java.util.List;
+
 import items.dao.ItemsDao;
 import items.domain.Items;
 
@@ -24,5 +26,15 @@ public class ItemService {
 		Items items = itemsDao.findByItemID(form.getItem_id());
 		if(items.getItem_id()!=null && items.getItem_id() == (form.getItem_id())) throw new EmployeeException("This Item ID has been registered!");
 		itemsDao.add(form);
+	}
+	
+	public List<Object> findItemQuery() throws InstantiationException, IllegalAccessException, ClassNotFoundException{
+		return itemsDao.findItemQuery();
+		
+	}
+	
+	public List<Object> findItemQuery2() throws InstantiationException, IllegalAccessException, ClassNotFoundException{
+		return itemsDao.findItemQuery2();
+		
 	}
 }

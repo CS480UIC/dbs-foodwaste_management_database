@@ -22,10 +22,14 @@
   </head>
   
   <body>
-    <h1>Welcome to the Demo</h1>
+    <h1>Query Results</h1>
     <br>
-    <a href="<c:url value='/findAll'/>" target="body">Please list all the user in the table</a>&nbsp;&nbsp;
- 
-    
+    <a href="<c:url value='/findAll'/>" target="body">list all the user in the table</a>&nbsp;&nbsp;
+    <br>
+    <a href="<c:url value='/ItemQuery'/>" target="body">list all the items in the table</a>&nbsp;&nbsp;    
+    <br>
+    <a href="<c:url value='/SalesQuery'/>" target="body">list all the sales with profit greater than minimum of the daily sale amount</a>&nbsp;&nbsp;
+    <br>
+    <a href="<c:url value='/ItemQuery2'/>" target="body">list all the items with concat and lower string formats</a>&nbsp;&nbsp;
   </body>
 </html>

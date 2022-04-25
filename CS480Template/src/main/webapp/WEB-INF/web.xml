@@ -385,6 +385,48 @@
     <servlet-name>findAll</servlet-name>
     <url-pattern>/findAll</url-pattern>
   </servlet-mapping>
+  
+  
+    <servlet>
+    <description></description>
+    <display-name>ItemQuery</display-name>
+    <servlet-name>ItemQuery</servlet-name>
+    
+    <servlet-class>items.web.servlet.ItemQuery</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ItemQuery</servlet-name>
+    <url-pattern>/ItemQuery</url-pattern>
+  </servlet-mapping>
+  
+     <servlet>
+    <description></description>
+    <display-name>ItemQuery2</display-name>
+    <servlet-name>ItemQuery2</servlet-name>
+    
+    <servlet-class>items.web.servlet.ItemQuery2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ItemQuery2</servlet-name>
+    <url-pattern>/ItemQuery2</url-pattern>
+  </servlet-mapping>
+   
+  
+  
+  
+      <servlet>
+    <description></description>
+    <display-name>SalesQuery</display-name>
+    <servlet-name>SalesQuery</servlet-name>
+    
+    <servlet-class>sales.web.servlet.SalesQuery</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SalesQuery</servlet-name>
+    <url-pattern>/SalesQuery</url-pattern>
+  </servlet-mapping>
+  
+  
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>login.jsp</welcome-file>

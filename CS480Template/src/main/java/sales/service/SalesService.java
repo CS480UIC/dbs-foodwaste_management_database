@@ -1,6 +1,8 @@
 package sales.service;
 
 
+import java.util.List;
+
 import sales.dao.SalesDao;
 import sales.domain.Sales;
 
@@ -24,5 +26,9 @@ public class SalesService {
 		Sales sales = salesDao.findBySaleID(form.getSale_id());
 		if(sales.getSale_id()!=null && sales.getSale_id() == (form.getSale_id())) throw new SalesException("This Sale ID has been registered!");
 		salesDao.add(form);
+	}
+	public List<Object> findSalesQuery() throws InstantiationException, IllegalAccessException, ClassNotFoundException{
+		return salesDao.findSalesQuery();
+		
 	}
 }

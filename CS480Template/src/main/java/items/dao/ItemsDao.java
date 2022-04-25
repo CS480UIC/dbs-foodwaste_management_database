@@ -5,15 +5,16 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
-
-
-
+import java.util.ArrayList;
+import java.util.List;
 
 //import java.util.ArrayList;
 //import java.util.List;
 
 import items.domain.Items;
+import items.domain.QueryDomain;
+import items.domain.QueryDomain2;
+import user.domain.User;
 
 /**
  * DDL functions performed in database
@@ -131,5 +132,57 @@ public class ItemsDao {
 		} catch(SQLException e) {
 			throw new RuntimeException(e);
 		}
+	}
+	
+	//
+	public List<Object> findItemQuery() throws InstantiationException, IllegalAccessException, ClassNotFoundException{
+		List<Object> list = new ArrayList<>();
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection connect = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/dbs_foodwaste_management_database", MySQL_user, MySQL_password);
+			String sql = "SELECT DISTINCT(item_name),COUNT(*) as count,SUM(item_price) as sum from items\r\n"
+					+ "WHERE item_price>120;";
+			PreparedStatement preparestatement = connect.prepareStatement(sql); 
+			ResultSet resultSet = preparestatement.executeQuery();			
+			while(resultSet.next()){
+				QueryDomain item_query = new QueryDomain();
+				item_query.setItem_name(resultSet.getString("item_name"));
+				item_query.setCount(Integer.parseInt(resultSet.getString("count")));
+				item_query.setSum(Integer.parseInt(resultSet.getString("sum")));
+	    		
+	    		
+	    		//item_name , count - int , sum - int
+	    		list.add(item_query);
+			 }
+			connect.close();
+		} catch(SQLException e) {
+			throw new RuntimeException(e);
+		}
+		return list;
+		
+	}
+	
+	public List<Object> findItemQuery2() throws InstantiationException, IllegalAccessException, ClassNotFoundException{
+		List<Object> list = new ArrayList<>();
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection connect = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/dbs_foodwaste_management_database", MySQL_user, MySQL_password);
+			String sql = "SELECT CONCAT('modified ',item_name) as concat_string ,LOWER(item_name) as lower_string from items\r\n"
+					+ "WHERE item_price>200;";
+			PreparedStatement preparestatement = connect.prepareStatement(sql); 
+			ResultSet resultSet = preparestatement.executeQuery();			
+			while(resultSet.next()){
+				QueryDomain2 item_query2 = new QueryDomain2();
+				item_query2.setConcat_string(resultSet.getString("concat_string"));
+				item_query2.setLower_string(resultSet.getString("lower_string"));	    		
+				//concat_string - string , lower_string - string
+	    		list.add(item_query2);
+			 }
+			connect.close();
+		} catch(SQLException e) {
+			throw new RuntimeException(e);
+		}
+		return list;
+		
 	}
 }

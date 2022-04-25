@@ -12,7 +12,7 @@ WHERE offer_item_name LIKE '%a%' and offer_id>27;
 
 ##(numeric function , string funciton , date and time function , group by and having clause) 
 
-SELECT DISTINCT(item_name),COUNT(*),LOG(item_price) from items
+SELECT DISTINCT(item_name),COUNT(*) as count,SUM(item_price) as sum from items
 WHERE item_price>120;
 
 SELECT sale_id,current_date,profit from sales
