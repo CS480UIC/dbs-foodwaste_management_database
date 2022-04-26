@@ -31,4 +31,8 @@ public class SalesService {
 		return salesDao.findSalesQuery();
 		
 	}
+	public List<Object> findall() throws InstantiationException, IllegalAccessException, ClassNotFoundException{
+		return salesDao.findall();
+		
+	}
 }

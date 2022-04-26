@@ -1,6 +1,8 @@
 package employee.service;
 
 
+import java.util.List;
+
 import employee.dao.EmployeeDao;
 import employee.domain.Employee;
 
@@ -24,5 +26,10 @@ public class EmployeeService {
 		Employee employee = employeeDao.findByEmployeeID(form.getEmployee_id());
 		if(employee.getEmployee_id()!=null && employee.getEmployee_id() == (form.getEmployee_id())) throw new EmployeeException("This Employee ID has been registered!");
 		employeeDao.add(form);
+	}
+	
+	public List<Object> findEmployee() throws InstantiationException, IllegalAccessException, ClassNotFoundException{
+		return employeeDao.findEmployee();
+		
 	}
 }

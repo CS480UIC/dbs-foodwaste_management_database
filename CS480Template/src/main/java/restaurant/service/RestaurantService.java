@@ -1,6 +1,8 @@
 package restaurant.service;
 
 
+import java.util.List;
+
 import restaurant.dao.RestaurantDao;
 import restaurant.domain.Restaurant;
 
@@ -24,5 +26,10 @@ public class RestaurantService {
 		Restaurant restaurant = restaurantDao.findByRestaurantID(form.getRestaurant_id());
 		if(restaurant.getRestaurant_id()!=null && restaurant.getRestaurant_id() == (form.getRestaurant_id())) throw new RestaurantException("This Restaurant ID has been registered!");
 		restaurantDao.add(form);
+	}
+
+	public List<Object> findall() throws InstantiationException, IllegalAccessException, ClassNotFoundException{
+		return restaurantDao.findall();
+		
 	}
 }

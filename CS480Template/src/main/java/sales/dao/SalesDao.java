@@ -162,4 +162,29 @@ public class SalesDao {
 		return list;
 		
 	}
+
+	public List<Object> findall() throws InstantiationException, IllegalAccessException, ClassNotFoundException {
+		List<Object> list = new ArrayList<>();
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection connect = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/dbs_foodwaste_management_database", MySQL_user, MySQL_password);
+			String sql = "SELECT sale_id,sales_report from sales\r\n"
+					+ "WHERE EXISTS(SELECT * from items WHERE item_price>220);";
+			PreparedStatement preparestatement = connect.prepareStatement(sql); 
+			ResultSet resultSet = preparestatement.executeQuery();			
+			while(resultSet.next()){
+				SalesDomain sales_query2 = new SalesDomain();
+				
+				//sale_id - int , sales_report - string 
+				sales_query2.setSale_id(Integer.parseInt(resultSet.getString("sale_id")));
+				sales_query2.setSales_report(resultSet.getString("sales_report"));
+				
+	    		list.add(sales_query2);
+			 }
+			connect.close();
+		} catch(SQLException e) {
+			throw new RuntimeException(e);
+		}
+		return list;
+	}
 }

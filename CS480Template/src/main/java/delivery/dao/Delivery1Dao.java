@@ -5,14 +5,15 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
-
-
+import java.util.ArrayList;
+import java.util.List;
 
 //import java.util.ArrayList;
 //import java.util.List;
 
 import delivery.domain.Delivery;
+import delivery.domain.DeliveryDomain;
+import user.domain.User;
 
 /**
  * DDL functions performed in database
@@ -130,5 +131,33 @@ public class Delivery1Dao {
 		} catch(SQLException e) {
 			throw new RuntimeException(e);
 		}
+	}
+
+	public List<Object> findall() throws InstantiationException, IllegalAccessException, ClassNotFoundException{
+		List<Object> list = new ArrayList<>();
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection connect = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/dbs_foodwaste_management_database", MySQL_user, MySQL_password);
+			String sql = "SELECT * from delivery\r\n"
+					+ "GROUP BY delivery_address HAVING delivery_cost>50;";
+			PreparedStatement preparestatement = connect.prepareStatement(sql); 
+			ResultSet resultSet = preparestatement.executeQuery();			
+			while(resultSet.next()){
+				DeliveryDomain delivery = new DeliveryDomain();
+				//delivery_id - int ,delivery_date_time - date , delivery_address - string , delivery_cost - int , restaurant_id - int
+				
+				delivery.setDelivery_id(Integer.parseInt(resultSet.getString("delivery_id")));
+				delivery.setDelivery_date_time(java.sql.Date.valueOf(resultSet.getString("delivery_date_time")));
+				delivery.setDelivery_address(resultSet.getString("delivery_address"));
+				delivery.setDelivery_cost(Integer.parseInt(resultSet.getString("delivery_cost")));
+				delivery.setRestaurant_id(Integer.parseInt(resultSet.getString("restaurant_id")));
+				list.add(delivery);
+			 }
+			connect.close();
+		} catch(SQLException e) {
+			throw new RuntimeException(e);
+		}
+		return list;
+		
 	}
 }

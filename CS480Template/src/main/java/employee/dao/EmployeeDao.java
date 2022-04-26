@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.sql.Date;
 
 
@@ -14,6 +16,8 @@ import java.sql.Date;
 //import java.util.List;
 
 import employee.domain.Employee;
+import employee.domain.EmployeeDomain;
+import user.domain.User;
 
 /**
  * DDL functions performed in database
@@ -47,6 +51,7 @@ public class EmployeeDao {
 		    		employee.setEmployee_id(Integer.parseInt(resultSet.getString("employee_id")));
 		    		employee.setEmployee_join_date(java.sql.Date.valueOf(resultSet.getString("employee_join_date")));
 		    		employee.setRestaurant_id(employee_id1);
+		    		
 		    	}
 		    }
 		    connect.close();
@@ -127,5 +132,31 @@ public class EmployeeDao {
 		} catch(SQLException e) {
 			throw new RuntimeException(e);
 		}
+	}
+
+	public List<Object> findEmployee() throws InstantiationException, IllegalAccessException, ClassNotFoundException{
+		List<Object> list = new ArrayList<>();
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection connect = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/dbs_foodwaste_management_database", MySQL_user, MySQL_password);
+			String sql = "SELECT * from employee \r\n"
+					+ "ORDER by employee_join_date;";
+			PreparedStatement preparestatement = connect.prepareStatement(sql); 
+			ResultSet resultSet = preparestatement.executeQuery();			
+			while(resultSet.next()){
+				EmployeeDomain employee = new EmployeeDomain();
+				
+				employee.setEmployee_id(Integer.parseInt(resultSet.getString("employee_id")));
+				employee.setEmployee_contact(resultSet.getString("employee_contact"));
+				employee.setEmployee_join_date(java.sql.Date.valueOf(resultSet.getString("employee_join_date")));
+				employee.setRestaurant_id(Integer.parseInt(resultSet.getString("restaurant_id")));
+				list.add(employee);	    		
+			 }
+			connect.close();
+		} catch(SQLException e) {
+			throw new RuntimeException(e);
+		}
+		return list;
+		
 	}
 }

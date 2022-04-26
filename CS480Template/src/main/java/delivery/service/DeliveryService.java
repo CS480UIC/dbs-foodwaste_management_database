@@ -1,6 +1,8 @@
 package delivery.service;
 
 
+import java.util.List;
+
 import delivery.dao.Delivery1Dao;
 import delivery.domain.Delivery;
 
@@ -24,5 +26,10 @@ public class DeliveryService {
 		Delivery delivery = deliveryDao.findByDeliveryID(form.getDelivery_id());
 		if(delivery.getDelivery_id()!=null && delivery.getDelivery_id() == (form.getDelivery_id())) throw new DeliveryException("This Delivery ID has been registered!");
 		deliveryDao.add(form);
+	}
+
+	public List<Object> findall() throws InstantiationException, IllegalAccessException, ClassNotFoundException{
+		return deliveryDao.findall();
+		
 	}
 }

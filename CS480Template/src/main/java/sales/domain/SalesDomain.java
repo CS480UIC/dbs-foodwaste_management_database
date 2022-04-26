@@ -4,10 +4,25 @@ import java.sql.Date;
 
 public class SalesDomain {
 	//sale_id - int , current_date - date , profit - int
-	
+	//sale_id - int , sales_report - string 
+
 	private Integer sale_id;
 	private Date current_date;
 	private Integer profit;
+	private String sales_report;
+	
+	/**
+	 * @return the sales_report
+	 */
+	public String getSales_report() {
+		return sales_report;
+	}
+	/**
+	 * @param sales_report the sales_report to set
+	 */
+	public void setSales_report(String sales_report) {
+		this.sales_report = sales_report;
+	}
 	/**
 	 * @return the sale_id
 	 */

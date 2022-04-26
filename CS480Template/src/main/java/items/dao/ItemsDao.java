@@ -8,6 +8,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import items.domain.ItemDomain;
+
 //import java.util.ArrayList;
 //import java.util.List;
 
@@ -177,6 +179,29 @@ public class ItemsDao {
 				item_query2.setLower_string(resultSet.getString("lower_string"));	    		
 				//concat_string - string , lower_string - string
 	    		list.add(item_query2);
+			 }
+			connect.close();
+		} catch(SQLException e) {
+			throw new RuntimeException(e);
+		}
+		return list;
+		
+	}
+
+	public List<Object> findItemQuery3() throws InstantiationException, IllegalAccessException, ClassNotFoundException{
+		List<Object> list = new ArrayList<>();
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection connect = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/dbs_foodwaste_management_database", MySQL_user, MySQL_password);
+			String sql = "SELECT item_id,item_name from items\r\n"
+					+ "WHERE item_price>(SELECT item_price from items WHERE item_id=33);";
+			PreparedStatement preparestatement = connect.prepareStatement(sql); 
+			ResultSet resultSet = preparestatement.executeQuery();			
+			while(resultSet.next()){
+				ItemDomain item_query3 = new ItemDomain();			
+				item_query3.setItem_id(Integer.parseInt(resultSet.getString("item_id")));
+				item_query3.setItem_name(resultSet.getString("item_name"));			
+	    		list.add(item_query3);
 			 }
 			connect.close();
 		} catch(SQLException e) {

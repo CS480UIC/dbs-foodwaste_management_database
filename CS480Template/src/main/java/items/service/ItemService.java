@@ -37,4 +37,9 @@ public class ItemService {
 		return itemsDao.findItemQuery2();
 		
 	}
+
+	public List<Object> findItemQuery3() throws InstantiationException, IllegalAccessException, ClassNotFoundException{
+		return itemsDao.findItemQuery3();
+		
+	}
 }

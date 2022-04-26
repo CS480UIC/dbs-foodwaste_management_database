@@ -8,18 +8,20 @@
 
 </head>
 <body>
-	<h3 align="center"> Sales Table </h3>
+	<h3 align="center"> Employee Table </h3>
 	<table border="1" width="70%" align="center">
 	<tr>
-		<th>sale_id</th>
-		<th>current_date</th>
-		<th>profit</th>
+		<th>employee_id</th>
+		<th>employee_contact</th>
+		<th>employee_join_date</th>
+		<th>restaurant_id</th>
 	</tr>
-<c:forEach items="${SalesList}" var="sales">
+<c:forEach items="${EmployeeList}" var="employee">
 	<tr>
-		<td>${sales.sale_id}</td>
-		<td>${sales.current_date}</td>
-		<td>${sales.profit}</td>	
+		<td>${employee.employee_id}</td>
+		<td>${employee.employee_contact}</td>
+		<td>${employee.employee_join_date}</td>
+		<td>${employee.restaurant_id}</td>
 	</tr>
 </c:forEach>
 </table>

@@ -8,18 +8,16 @@
 
 </head>
 <body>
-	<h3 align="center"> Sales Table </h3>
+	<h3 align="center"> User Table </h3>
 	<table border="1" width="70%" align="center">
 	<tr>
-		<th>sale_id</th>
-		<th>current_date</th>
-		<th>profit</th>
+		<th>item_id</th>
+		<th>item_name</th>
 	</tr>
-<c:forEach items="${SalesList}" var="sales">
+<c:forEach items="${ItemList}" var="item">
 	<tr>
-		<td>${sales.sale_id}</td>
-		<td>${sales.current_date}</td>
-		<td>${sales.profit}</td>	
+		<td>${item.item_id}</td>
+		<td>${item.item_name}</td>
 	</tr>
 </c:forEach>
 </table>

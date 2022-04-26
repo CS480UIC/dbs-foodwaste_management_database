@@ -6,20 +6,21 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
+
 </head>
 <body>
-	<h3 align="center"> Sales Table </h3>
+	<h3 align="center"> Restaurant Table </h3>
 	<table border="1" width="70%" align="center">
 	<tr>
-		<th>sale_id</th>
-		<th>current_date</th>
-		<th>profit</th>
+		<th>restaurant_name</th>
+		<th>delivery_id</th>
+		<th>delivery_address</th>
 	</tr>
-<c:forEach items="${SalesList}" var="sales">
+<c:forEach items="${RestaurantList}" var="restaurant">
 	<tr>
-		<td>${sales.sale_id}</td>
-		<td>${sales.current_date}</td>
-		<td>${sales.profit}</td>	
+		<td>${restaurant.restaurant_name}</td>
+		<td>${restaurant.delivery_id}</td>
+		<td>${restaurant.delivery_address}</td>
 	</tr>
 </c:forEach>
 </table>

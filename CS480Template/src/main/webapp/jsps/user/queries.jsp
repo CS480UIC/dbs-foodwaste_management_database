@@ -33,5 +33,15 @@
     <a href="<c:url value='/ItemQuery2'/>" target="body">list all the items with concat and lower string formats</a>&nbsp;&nbsp;
     <br>
     <a href="<c:url value='/OfferQuery'/>" target="body">list all the offers with offer_id > 27</a>&nbsp;&nbsp;
+    <br>
+    <a href="<c:url value='/EmployeeQuery'/>" target="body">list all the employee</a>&nbsp;&nbsp;
+    <br>
+    <a href="<c:url value='/DeliveryQuery'/>" target="body">list all the delivery with delivery_cost >50</a>&nbsp;&nbsp;
+    <br>
+    <a href="<c:url value='/RestaurantQuery'/>" target="body">list all the restaurant and delivery_id on same restaurant_id</a>&nbsp;&nbsp;
+    <br>
+    <a href="<c:url value='/ItemQuery3'/>" target="body">list all the items with item_price sub_query</a>&nbsp;&nbsp;
+    <br>
+    <a href="<c:url value='/SalesQuery2'/>" target="body">list all the sales with where exits clause</a>&nbsp;&nbsp;
   </body>
 </html>

@@ -12,14 +12,12 @@
 	<table border="1" width="70%" align="center">
 	<tr>
 		<th>sale_id</th>
-		<th>current_date</th>
-		<th>profit</th>
+		<th>sales_report</th>
 	</tr>
 <c:forEach items="${SalesList}" var="sales">
 	<tr>
 		<td>${sales.sale_id}</td>
-		<td>${sales.current_date}</td>
-		<td>${sales.profit}</td>	
+		<td>${sales.sales_report}</td>
 	</tr>
 </c:forEach>
 </table>

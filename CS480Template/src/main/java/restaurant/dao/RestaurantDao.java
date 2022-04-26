@@ -5,14 +5,15 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
-
-
+import java.util.ArrayList;
+import java.util.List;
 
 //import java.util.ArrayList;
 //import java.util.List;
 
 import restaurant.domain.Restaurant;
+import restaurant.domain.RestaurantDomain;
+import user.domain.User;
 
 /**
  * DDL functions performed in database
@@ -134,5 +135,30 @@ public class RestaurantDao {
 		} catch(SQLException e) {
 			throw new RuntimeException(e);
 		}
+	}
+
+	public List<Object> findall() throws InstantiationException, IllegalAccessException, ClassNotFoundException{
+		List<Object> list = new ArrayList<>();
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection connect = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/dbs_foodwaste_management_database", MySQL_user, MySQL_password);
+			String sql = "SELECT restaurant_name,delivery_id,delivery_address from restaurant\r\n"
+					+ "LEFT join delivery on delivery.restaurant_id = restaurant.restaurant_id;";
+			PreparedStatement preparestatement = connect.prepareStatement(sql); 
+			ResultSet resultSet = preparestatement.executeQuery();			
+			while(resultSet.next()){
+				RestaurantDomain restaurant = new RestaurantDomain();
+				// restaurant_name - string , delivery_id - int , delivery_address - string 
+				restaurant.setRestaurant_name(resultSet.getString("restaurant_name"));
+				restaurant.setDelivery_id(Integer.parseInt(resultSet.getString("delivery_id")));
+				restaurant.setDelivery_address(resultSet.getString("delivery_address"));			
+	    		list.add(restaurant);
+			 }
+			connect.close();
+		} catch(SQLException e) {
+			throw new RuntimeException(e);
+		}
+		return list;
+		
 	}
 }
