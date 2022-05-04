@@ -11,7 +11,7 @@ Team Members:
 
 Project Description: 
 
-We would like to design and develop a database called foodwaste_database_management_system. The main aim of our project is to maintain records of the items, sales and employees  for a restraurant. This project helps restaurant to analyze the food wastage based on the item usage, restaurants can manage their inventory, employees appropriately and also sell products to users. And users are introduced to many offers on the items provided by the restaurant. Restaurant can also track their daily sales.
+We would like to design and develop a database called foodwaste_database_management_system. The goal of our project is to maintain records of the items, sales and employees  for a restraurant. This project helps restaurant to analyze the food wastage based on the item usage, restaurants can manage their inventory, employees appropriately and also sell products to users. And users are introduced to many offers on the items provided by the restaurant. Restaurant can also track their daily sales.
 
 <br/>
 <h2>Screenshots</h2>
