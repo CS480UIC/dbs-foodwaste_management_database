@@ -11,10 +11,8 @@ Team Members:
 
 Project Description: 
 
-1. In this application, restaurants update the left_over_food available before their closing time, which is available to the users and can purchase at a reduced price.
-2. Data to be stored - [restaurant info, left_over_food, open positions at the restaurant]
-3. Every food delivery application and all restaurant applications can use this database.
-4. Many applications use the location to suggest the nearby restaurants, but they do not mention the left_over_food at the restaurant or reveal info about the open positions at the restaurant.
+We would like to design and develop a database called foodwaste_database_management_system. The main aim of our project is to maintain records of the items, sales and employees  for a restraurant. This project helps restaurant to analyze the food wastage based on the item usage, restaurants can manage their inventory, employees appropriately and also sell products to users. And users are introduced to many offers on the items provided by the restaurant. Restaurant can also track their daily sales.
+
 <br/>
 <h2>Screenshots</h2>
 <img width="954" alt="1" src="https://user-images.githubusercontent.com/90991188/158493637-7c4911a6-7a98-4a0e-ae3b-185b8339a1d5.PNG">
